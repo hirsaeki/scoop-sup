@@ -1,0 +1,40 @@
+{
+    "version": "6.07",
+    "description": "nvencc",
+    "homepage": "https://github.com/rigaya/NVEnc",
+    "checkver": "github",
+    "license": "MIT",
+    "pre_install": "if(test-path \"$dir\\NVEncC*\" -PathType Container) { Move-Item \"$dir\\NVEncC*\\*\" \"$dir\" | Out-Null }",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/rigaya/NVEnc/releases/download/6.07/NVEncC_6.07_x64.7z",
+            "hash": "7f3f5a06c02d4133db8bf1e03fc3f3c269ee3b49f5682f58c496855b3f0acdb3",
+            "bin": [
+                [
+                    "NVEncC64.exe",
+                    "NVEnc"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/rigaya/NVEnc/releases/download/6.07/NVEncC_6.07_Win32.7z",
+            "hash": "17d9fbbb6f3889316a1350851124f7cee8600ab62664034970f048fda93e7b18",
+            "bin": [
+                [
+                    "NVEncC32.exe",
+                    "NVEnc"
+                ]
+            ]
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/rigaya/NVEnc/releases/download/$version/NVEncC_$version_x64.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/rigaya/NVEnc/releases/download/$version/NVEncC_$version_Win32.7z"
+            }
+        }
+    }
+}

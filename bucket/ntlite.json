@@ -1,0 +1,35 @@
+{
+    "homepage": "https://www.ntlite.com/",
+    "version": "2.3.7.8850",
+    "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe",
+    "hash": "b303bedf05f97c271644f3b7b95880ee7b110dcb34835c7d7b515311debf00fb",
+    "shortcuts": [
+        [
+            "NTLite.exe",
+            "NTLite"
+        ]
+    ],
+    "depends": "innoextract",
+    "pre_install": "if(!(Test-Path \"$persist_dir\\settings.xml\")) {Set-Content -Encoding ASCII -Path \"$dir\\settings.xml\" -Value '<?xml version=\"1.0\" encoding=\"utf-8\"?>`r`n<GeneralOptions xmlns=\"urn:schemas-nliteos-com:pn.v1\">`r`n</GeneralOptions>'}",
+    "installer": {
+        "script": [
+            "cd \"$dir\"",
+            "innoextract.exe \"$dir\\$fname\"",
+            "Get-ChildItem -Path app|Move-Item -Destination .",
+            "Remove-Item app -Recurse",
+            "Remove-Item \"$fname\""
+        ]
+    },
+    "persist": [
+        "settings.xml",
+        "Presets",
+        "Updates"
+    ],
+    "checkver": {
+        "url": "https://www.ntlite.com/download/",
+        "re": "v(([\\d]).([\\d]).([\\d]).([\\d]{4}))"
+    },
+    "autoupdate": {
+        "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe"
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "version": "7.09",
+    "description": "qsvenc",
+    "homepage": "https://github.com/rigaya/QSVEnc",
+    "checkver": "github",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/rigaya/QSVEnc/releases/download/7.09/QSVEncC_7.09_x64.7z",
+            "hash": "f880669ff6db4a3f8119f890b325fcc570022efb2c81195c0098f192c6646c87",
+            "bin": [
+                [
+                    "QSVEncC64.exe",
+                    "QSVEnc"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/rigaya/QSVEnc/releases/download/7.09/QSVEncC_7.09_Win32.7z",
+            "hash": "e9273d49763629275d96ee658863ca1231c7e6d895cd2a3733bf9b755240004c",
+            "bin": [
+                [
+                    "QSVEncC32.exe",
+                    "QSVEnc"
+                ]
+            ]
+        }
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/rigaya/QSVEnc/releases/download/$version/QSVEncC_$version_x64.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/rigaya/QSVEnc/releases/download/$version/QSVEncC_$version_Win32.7z"
+            }
+        }
+    }
+}
