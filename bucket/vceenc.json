@@ -1,13 +1,13 @@
 {
-    "version": "7.10",
+    "version": "7.11",
     "description": "vceencc",
     "homepage": "https://github.com/rigaya/VCEEnc",
     "checkver": "github",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rigaya/VCEEnc/releases/download/7.10/VCEEncC_7.10_x64.7z",
-            "hash": "fd3e10c0175c259ed6107246860b7f0a93e25ccc79997f547225cfbf7ce72d6b",
+            "url": "https://github.com/rigaya/VCEEnc/releases/download/7.11/VCEEncC_7.11_x64.7z",
+            "hash": "034cc05cf07568e025f8add9edea4ef55f85114c854c9a4b613fa0c4bc16f2cd",
             "bin": [
                 [
                     "VCEEncC64.exe",
@@ -16,8 +16,8 @@
             ]
         },
         "32bit": {
-            "url": "https://github.com/rigaya/VCEEnc/releases/download/7.10/VCEEncC_7.10_Win32.7z",
-            "hash": "50e38dd33673bc4e7b8d339345fa9041729e50effb2020b1f6417eee69519fef",
+            "url": "https://github.com/rigaya/VCEEnc/releases/download/7.11/VCEEncC_7.11_Win32.7z",
+            "hash": "55b09ad1b6216e0cf481ab7c02e594b1b2ee93c5f9be2ff8a9d13d3d9181edd6",
             "bin": [
                 [
                     "VCEEncC32.exe",
