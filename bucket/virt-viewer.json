@@ -1,17 +1,16 @@
 {
     "version": "11.0-1.0",
     "description": "Spice virtual machine viewer",
+    "homepage": "https://virt-manager.org/download/",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
             "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x64-11.0-1.0.msi",
-            "hash": "b7de0474e97fe1e81101f2406fcf603fe08666bcb3816c3c465c8d64330be610",
-            "extract_dir": "VirtViewer v11.0-1.0-256"
+            "hash": "b7de0474e97fe1e81101f2406fcf603fe08666bcb3816c3c465c8d64330be610"
         },
         "32bit": {
             "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x86-11.0-1.0.msi",
-            "hash": "85c75602c02a28f57e3837b9b00eaf356cc45fb9b1ed2245b1e018a1222e5052",
-            "extract_dir": "VirtViewer v11.0-1.0-256"
+            "hash": "85c75602c02a28f57e3837b9b00eaf356cc45fb9b1ed2245b1e018a1222e5052"
         }
     },
     "bin": [
@@ -29,10 +28,11 @@
         ]
     ],
     "pre_install": [
-        "cd $dir",
+        "$virtdir = (Get-ChildItem \"$dir\\Virt*\" | Select-Object -First 1).FullName",
+        "Move-Item \"$virtdir\\*\" \"$dir\\\"",
+        "Remove-Item \"$virtdir\"",
         "magick $dir\\share\\icons\\hicolor\\16x16\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\22x22\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\24x24\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\32x32\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\48x48\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\256x256\\apps\\virt-viewer.png $dir\\remote-viewer.ico"
     ],
-    "homepage": "https://virt-manager.org/download/",
     "checkver": {
         "url": "",
         "regex": "virt-viewer-x86-([\\d.-]+)\\.msi",
@@ -41,12 +41,10 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x64-$version.msi",
-                "extract_dir": "VirtViewer v$version-256"
+                "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x64-$version.msi"
             },
             "32bit": {
-                "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x86-$version.msi",
-                "extract_dir": "VirtViewer v$version-256"
+                "url": "https://virt-manager.org/download/sources/virt-viewer/virt-viewer-x86-$version.msi"
             }
         }
     }
