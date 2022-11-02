@@ -14,10 +14,8 @@
         }
     },
     "bin": [
-        [
-            "bin\\virt-viewer.exe",
-            "bin\\remote-viewer.exe"
-        ]
+        "bin\\virt-viewer.exe",
+        "bin\\remote-viewer.exe"
     ],
     "shortcuts": [
         [
