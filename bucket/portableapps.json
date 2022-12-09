@@ -2,9 +2,9 @@
     "homepage": "https://portableapps.com/ja",
     "description": "PortableApps.com platform",
     "license": "GPL-2.0",
-    "version": "22.0",
-    "url": "https://downloads.sourceforge.net/project/portableapps/PortableApps.com%20Platform/PortableApps.com_Platform_Setup_22.0.paf.exe#/dl.7z",
-    "hash": "9c2b4d5fc9be067c2730d6d5a472ce8fcef0ed8a7c064b6781efd54b904cccf7",
+    "version": "23.0",
+    "url": "https://downloads.sourceforge.net/project/portableapps/PortableApps.com%20Platform/PortableApps.com_Platform_Setup_23.0.paf.exe#/dl.7z",
+    "hash": "d61ba6224796a9bdcd82bace4728fc6f5a0df818952f158f13d6049828bb4cfb",
     "bin": "Start.exe",
     "persist": [
         "PortableApps/PortableApps.com/App",
