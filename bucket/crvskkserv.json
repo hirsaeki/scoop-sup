@@ -60,7 +60,7 @@ ARGF.each do |line|
 end
 '@; $byte = [System.Text.Encoding]::UTF8.GetBytes($src); [System.IO.File]::WriteAllBytes(\"$dir\\DICTS\\googleime2skk.rb\",$byte)",
         "ls -Name *.txt|%{$command = @\"
-nkf -s $_ |ruby googleime2skk.rb|nkf -e -x > $_.dic
+nkf --oc UTF-8 $_ |ruby googleime2skk.rb|nkf -e -x > $_.dic
 \"@; cmd.exe /C $command}",
         "Remove-Item *.txt",
         "$args = (ls -Name -Exclude \"*.rb\") -Join \" + \"; $command = @\"
