@@ -7,6 +7,7 @@
     "pre_install": "if(!(test-path \"$dir\\crvskkserv.ini\")) { New-Item \"$dir\\crvskkserv.ini\" | Out-Null }",
     "depends": [
         "ruby",
+        "nkf",
         "skktools"
     ],
     "persist": [
@@ -26,46 +27,12 @@
         "7z.exe -y e *.zip",
         "Remove-Item *.gz",
         "Remove-Item *.zip",
-        "$src = @'
-require 'nkf'
-
-class String
-  # borrowed from http://openlab.jp/skk/skk/tools/filters/skkdictools.rb
-  def concatify
-    #if !(/^([-\\w]+.*)$/ =~ self) && (/[;\\r\\n\\/\\\"]/ =~ self)
-    # []の処理をしないとskkdic-expr2がSEGVる。
-    # see http://d.hatena.ne.jp/rubikitch/20091022/1256186001
-    if /[\\[\\];\\r\\n\\/\\\"]/ =~ self
-      tmp = self.gsub(/;/, '\\\\\\073').gsub(/\\//, '\\\\\\057').gsub(/\\r/, '\\\\r').gsub(/\\n/, '\\\\n').gsub(/\"/, '\\\\\"').gsub(/[\\[\\]]/, '')
-      return '(concat \"' + tmp + '\")'
-    else
-      return self
-    end
-  end
-end
-
-ARGF.each do |line|
-  line.chomp!
-  furigana, keyword, shubetsu = line.split(/\\t/, 3)
-  if furigana.empty?
-    next # ふりがながないキーワードを無視
-  end
-  if furigana == keyword
-    next # ひらがなだけのキーワードを無視
-  end
-  if furigana == NKF.nkf('-Ee -m0 --hiragana', keyword)
-    next # カタカナ語は無視
-  end
-  puts \"#{furigana} /#{keyword.gsub(/&amp;/, '&').concatify}/\"
-end
-'@; $byte = [System.Text.Encoding]::UTF8.GetBytes($src); [System.IO.File]::WriteAllBytes(\"$dir\\DICTS\\googleime2skk.rb\",$byte)",
-        "ls -Name *.txt|%{$command = @\"
-nkf --oc UTF-8 $_ |ruby googleime2skk.rb|nkf -e -x > $_.dic
-\"@; cmd.exe /C $command}",
+        "$src = \"cmVxdWlyZSAnbmtmJw0KDQpjbGFzcyBTdHJpbmcNCiAgIyBib3Jyb3dlZCBmcm9tIGh0dHA6Ly9vcGVubGFiLmpwL3Nray9za2svdG9vbHMvZmlsdGVycy9za2tkaWN0b29scy5yYg0KICBkZWYgY29uY2F0aWZ5DQogICAgI2lmICEoL14oWy1cd10rLiopJC8gPX4gc2VsZikgJiYgKC9bO1xyXG5cL1wiXS8gPX4gc2VsZikNCiAgICAjIFtd44Gu5Yem55CG44KS44GX44Gq44GE44Goc2trZGljLWV4cHIy44GMU0VHVuOCi+OAgg0KICAgICMgc2VlIGh0dHA6Ly9kLmhhdGVuYS5uZS5qcC9ydWJpa2l0Y2gvMjAwOTEwMjIvMTI1NjE4NjAwMQ0KICAgIGlmIC9bXFtcXTtcclxuXC9cIl0vID1+IHNlbGYNCiAgICAgIHRtcCA9IHNlbGYuZ3N1YigvOy8sICdcXFwwNzMnKS5nc3ViKC9cLy8sICdcXFwwNTcnKS5nc3ViKC9cci8sICdcXHInKS5nc3ViKC9cbi8sICdcXG4nKS5nc3ViKC8iLywgJ1xcIicpLmdzdWIoL1tcW1xdXS8sICcnKQ0KICAgICAgcmV0dXJuICcoY29uY2F0ICInICsgdG1wICsgJyIpJw0KICAgIGVsc2UNCiAgICAgIHJldHVybiBzZWxmDQogICAgZW5kDQogIGVuZA0KZW5kDQoNCkFSR0YuZWFjaCBkbyB8bGluZXwNCiAgbGluZS5jaG9tcCENCiAgZnVyaWdhbmEsIGtleXdvcmQsIHNodWJldHN1ID0gbGluZS5zcGxpdCgvXHQvLCAzKQ0KICBpZiBmdXJpZ2FuYS5lbXB0eT8NCiAgICBuZXh0ICMg44G144KK44GM44Gq44GM44Gq44GE44Kt44O844Ov44O844OJ44KS54Sh6KaWDQogIGVuZA0KICBpZiBmdXJpZ2FuYSA9PSBrZXl3b3JkDQogICAgbmV4dCAjIOOBsuOCieOBjOOBquOBoOOBkeOBruOCreODvOODr+ODvOODieOCkueEoeimlg0KICBlbmQNCiAgaWYgZnVyaWdhbmEgPT0gTktGLm5rZignLUVlIC1tMCAtLWhpcmFnYW5hJywga2V5d29yZCkNCiAgICBuZXh0ICMg44Kr44K/44Kr44OK6Kqe44Gv54Sh6KaWDQogIGVuZA0KICBwdXRzICIje2Z1cmlnYW5hfSAvI3trZXl3b3JkLmdzdWIoLyZhbXA7LywgJyYnKS5jb25jYXRpZnl9LyINCmVuZA==\"",
+        "$ByteArray = [System.Convert]::FromBase64String($src)",
+        "[System.IO.File]::WriteAllBytes((Join-Path (Get-Location).Path \"googleime2skk.rb\"), $ByteArray)",
+        "ls -Name *.txt | %{cmd.exe /c \"type $_ | ruby googleime2skk.rb | nkf -e -x > $_.dic\"}",
         "Remove-Item *.txt",
-        "$args = (ls -Name -Exclude \"*.rb\") -Join \" + \"; $command = @\"
- skkdic-expr2 -o SKK-JISYO.LL $args
-\"@; cmd.exe /C $command"
+        "$args = (ls -Name -Exclude \"*.rb\") -Join \" + \"; cmd.exe /c \"skkdic-expr2 -o SKK-JISYO.LL $args \""
     ],
     "shortcuts": [
         [
