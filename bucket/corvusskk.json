@@ -7,19 +7,16 @@
     "url": "https://github.com/nathancorvussolis/corvusskk/releases/download/3.1.5/corvusskk-3.1.5.exe#/setup.exe",
     "hash": "1e4309bcd979dc036afd9e89462e1fd3b5759aac45df2b65bc77f0c762e285db",
     "installer": {
-        "file": "setup.exe",
-        "args": [
-            "/quiet",
-            "/norestart"
+        "script": [
+            "if (!(is_admin)) { error 'This package requires admin rights to install'; break }",
+            "Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/quiet', '/norestart') -Verb RunAs"
         ],
         "keep": "true"
     },
     "uninstaller": {
-        "file": "setup.exe",
-        "args": [
-            "/uninstall",
-            "/norestart",
-            "/quiet"
+        "script": [
+            "if (!(is_admin)) { error 'This package requires admin rights to install'; break }",
+            "Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/uninstall', '/quiet', '/norestart') -Verb RunAs"
         ]
     },
     "autoupdate": {
