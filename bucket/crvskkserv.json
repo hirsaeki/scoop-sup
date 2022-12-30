@@ -1,5 +1,5 @@
 {
-    "version": "2.5.1",
+    "version": "2.5.6",
     "description": "win32 skk server.",
     "homepage": "https://github.com/nathancorvussolis/crvskkserv",
     "checkver": "github",
@@ -43,12 +43,12 @@
     "license": "MS-PL",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/nathancorvussolis/crvskkserv/releases/download/2.5.1/crvskkserv-2.5.1.zip",
-            "hash": "0cbd39c6fdcaa3e68d936fcc5ed9f393bc57d716a7d1d4d232aeb09c1aff6cfe"
+            "url": "https://github.com/nathancorvussolis/crvskkserv/releases/download/2.5.6/crvskkserv-2.5.6-x64.zip",
+            "hash": "8e36c5f9b43f951b011f7faabe93aac465c1ac84a4c71eae8f30bdd7ff9f65a1"
         },
         "32bit": {
-            "url": "https://github.com/nathancorvussolis/crvskkserv/releases/download/2.5.1/crvskkserv-2.5.1.zip",
-            "hash": "0cbd39c6fdcaa3e68d936fcc5ed9f393bc57d716a7d1d4d232aeb09c1aff6cfe"
+            "url": "https://github.com/nathancorvussolis/crvskkserv/releases/download/2.5.6/crvskkserv-2.5.6-x86.zip",
+            "hash": "13859051e26728bcb968f55e36d41574ff6faa34f13d63103e7e7892e975d137"
         }
     },
     "autoupdate": {
