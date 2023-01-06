@@ -3,6 +3,7 @@
     "version": "2.3.9.9020",
     "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe",
     "hash": "5abd41889a5e6658783412ea1bd2c334c037267cf440bc08e6f305ee82ab88ff",
+    "license": "Shareware",
     "shortcuts": [
         [
             "NTLite.exe",
