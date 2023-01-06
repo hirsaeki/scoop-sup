@@ -1,0 +1,36 @@
+{
+    "homepage": "https://github.com/yuru7/HackGen",
+    "license": "OFL-1.1",
+
+    "version": "v2.7.1",
+    "url": "https://github.com/yuru7/HackGen/releases/download/v2.7.1/HackGen_NF_v2.7.1.zip",
+    "hash": "",
+
+    "extract_dir": "HackGen_NF_v2.7.1",
+    "installer": {
+        "script": [
+            "Get-ChildItem $dir -filter '*.ttf' | ForEach-Object {",
+            "   $fontdir = \"$env:LocalAppData\\Microsoft\\Windows\\Fonts\"",
+            "   New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value \"$fontdir\\$($_.Name)\" -Force | Out-Null",
+            "   Copy-Item $_.Fullname -destination \"$fontdir\"",
+            "}"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "Get-ChildItem $dir -filter '*.ttf' | ForEach-Object {",
+            "   $fontdir = \"$env:LocalAppData\\Microsoft\\Windows\\Fonts\"",
+            "   Remove-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Force -ErrorAction SilentlyContinue",
+            "   Remove-Item \"$fontdir\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
+            "}"
+        ]
+    },
+    "checkver": {
+        "url": "https://api.github.com/repos/yuru7/HackGen/releases",
+        "jsonpath": "$[0].tag_name"
+    },
+    "autoupdate": {
+        "url": "https://github.com/yuru7/HackGen/releases/download/$version/HackGen_NF_$version.zip",
+        "extract_dir": "HackGen_NF_$version"
+    }
+}
