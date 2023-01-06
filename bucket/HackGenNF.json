@@ -3,7 +3,7 @@
     "license": "OFL-1.1",
     "version": "v2.8.0",
     "url": "https://github.com/yuru7/HackGen/releases/download/v2.8.0/HackGen_NF_v2.8.0.zip",
-    "hash": "",
+    "hash": "25cdd1487cc46df384d32c041303b4a04541fd61d0b973e8bb38fd1a3de65eb1",
     "extract_dir": "HackGen_NF_v2.8.0",
     "installer": {
         "script": [
