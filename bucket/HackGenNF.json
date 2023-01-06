@@ -1,12 +1,10 @@
 {
     "homepage": "https://github.com/yuru7/HackGen",
     "license": "OFL-1.1",
-
-    "version": "v2.7.1",
-    "url": "https://github.com/yuru7/HackGen/releases/download/v2.7.1/HackGen_NF_v2.7.1.zip",
+    "version": "v2.8.0",
+    "url": "https://github.com/yuru7/HackGen/releases/download/v2.8.0/HackGen_NF_v2.8.0.zip",
     "hash": "",
-
-    "extract_dir": "HackGen_NF_v2.7.1",
+    "extract_dir": "HackGen_NF_v2.8.0",
     "installer": {
         "script": [
             "Get-ChildItem $dir -filter '*.ttf' | ForEach-Object {",
