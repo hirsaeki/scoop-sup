@@ -3,10 +3,6 @@
     "description": "OpenConnect-GUI VPN Client",
     "homepage": "https://github.com/openconnect/openconnect-gui",
     "checkver": "github",
-    "depends": [
-        "openvpn",
-        "vcredist"
-    ],
     "pre_install": [
         "if(!(test-path \"$dir\\vpnc_customenv.txt\")) { New-Item \"$dir\\vpnc_customenv.txt\" | Out-Null }"
     ],
