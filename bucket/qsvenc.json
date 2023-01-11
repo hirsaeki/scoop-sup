@@ -1,13 +1,13 @@
 {
-    "version": "7.24",
+    "version": "7.25",
     "description": "qsvenc",
     "homepage": "https://github.com/rigaya/QSVEnc",
     "checkver": "github",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rigaya/QSVEnc/releases/download/7.24/QSVEncC_7.24_x64.7z",
-            "hash": "d32d6ca96d97df68be86f36118bbf4cf1522602f32aaff411d01d5d1d8031700",
+            "url": "https://github.com/rigaya/QSVEnc/releases/download/7.25/QSVEncC_7.25_x64.7z",
+            "hash": "70114aed1da4f993e23097668417da8a9ecc53d57d34705c1e3eca0004c9fb0b",
             "bin": [
                 [
                     "QSVEncC64.exe",
@@ -16,8 +16,8 @@
             ]
         },
         "32bit": {
-            "url": "https://github.com/rigaya/QSVEnc/releases/download/7.24/QSVEncC_7.24_Win32.7z",
-            "hash": "93f4c075ce705167299ae59b6c2e0d6424c2102cd43fb8b586b5c02da5275dee",
+            "url": "https://github.com/rigaya/QSVEnc/releases/download/7.25/QSVEncC_7.25_Win32.7z",
+            "hash": "6581025b71ed899fae8275bd9d6c44b14f1da01526de9e89dced3454587d69b2",
             "bin": [
                 [
                     "QSVEncC32.exe",
