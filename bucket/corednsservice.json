@@ -3,12 +3,12 @@
     "description": "coredns service wrapper",
     "homepage": "https://github.com/hnakamur/corednsservice",
     "bin": "corednsservice.exe",
+    "license": "MIT",
     "pre_install": [
         "$src = \"bmFtZTogQ29yZUROUw0KZGlzcGxheV9uYW1lOiBDb3JlRE5TIHNlcnZpY2UNCmRlc2NyaXB0aW9uOiBDb3JlRE5TIHNlcnZpY2UNCmV4ZWM6ICI8RHJpdmU+OlxcPERpcj5cXGNvcmVkbnMuZXhlIg0KYXJnczogWyItY29uZiIsICJjb3JlZmlsZSJdDQpkaXI6ICI8RHJpdmU+OlxcPERpcj4iDQpzdGRvdXQ6DQogIGZpbGVuYW1lOiAiPFRoaXMgRHJpdmU+OlxcPFRoaXMgRGlyPlxcbG9nXFxjb3JlZG5zLmxvZyINCiAgbWF4c2l6ZTogMTAwDQogIG1heGJhY2t1cHM6IDUwDQogIG1heGFnZTogMzANCiAgY29tcHJlc3M6IHRydWU=\"",
         "$ByteArray = [System.Convert]::FromBase64String($src)",
-        "if(!(test-path \"$dir\\corednsservice.yml\")) { [System.IO.File]::WriteAllBytes(\"$dir\\corednsservice.yaml\", $ByteArray) }",
-        "if(!(test-path \"$dir\\Log\")) { New-Item \"$dir\\Log\" -ItemType Directory | Out-Null }",
-        "if(!(test-path \"$dir\\Log\")) { New-Item \"$dir\\corefile\" | Out-Null }"
+        "if(!(test-path \"$dir\\corednsservice.yml\")) { [System.IO.File]::WriteAllBytes(\"$dir\\corednsservice.yml\", $ByteArray) }",
+        "if(!(test-path \"$dir\\corefile\")) { New-Item \"$dir\\corefile\" | Out-Null }"
     ],
     "persist": [
         "corednsservice.yml",
