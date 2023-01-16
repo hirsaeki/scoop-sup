@@ -1,0 +1,20 @@
+{
+    "version": "v0.1.0",
+    "description": "coredns service wrapper",
+    "homepage": "https://github.com/hnakamur/corednsservice",
+    "bin": "corednsservice.exe",
+    "pre_install": [
+        "$src = \"bmFtZTogQ29yZUROUw0KZGlzcGxheV9uYW1lOiBDb3JlRE5TIHNlcnZpY2UNCmRlc2NyaXB0aW9uOiBDb3JlRE5TIHNlcnZpY2UNCmV4ZWM6ICI8RHJpdmU+OlxcPERpcj5cXGNvcmVkbnMuZXhlIg0KYXJnczogWyItY29uZiIsICJjb3JlZmlsZSJdDQpkaXI6ICI8RHJpdmU+OlxcPERpcj4iDQpzdGRvdXQ6DQogIGZpbGVuYW1lOiAiPFRoaXMgRHJpdmU+OlxcPFRoaXMgRGlyPlxcbG9nXFxjb3JlZG5zLmxvZyINCiAgbWF4c2l6ZTogMTAwDQogIG1heGJhY2t1cHM6IDUwDQogIG1heGFnZTogMzANCiAgY29tcHJlc3M6IHRydWU=\"",
+        "$ByteArray = [System.Convert]::FromBase64String($src)",
+        "if(!(test-path \"$dir\\corednsservice.yml\")) { [System.IO.File]::WriteAllBytes(\"$dir\\corednsservice.yaml\", $ByteArray) }",
+        "if(!(test-path \"$dir\\Log\")) { New-Item \"$dir\\Log\" -ItemType Directory | Out-Null }",
+        "if(!(test-path \"$dir\\Log\")) { New-Item \"$dir\\corefile\" | Out-Null }"
+    ],
+    "persist": [
+        "corednsservice.yml",
+        "log",
+        "corefile"
+    ],
+    "url": "https://github.com/hnakamur/corednsservice/releases/download/v0.1.0/corednsservice.exe",
+    "hash": "a1ecb70fb9fb8c0b4a56b7b971b64c78ff903a8cac2c936b9141651a5f2b4ae3"
+}
