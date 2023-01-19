@@ -17,7 +17,12 @@
         "        New-Item \"$dir\\$file\" -Type File | Out-Null",
         "    }",
         "}",
-        "@('MobaXterm backup.zip', 'MobaXterm.ini') | ForEach-Object { PersistsFile $_ }"
+        "@('MobaXterm backup.zip') | ForEach-Object { PersistsFile $_ }",
+        "if (!(Test-Path \"$persist_dir\\MobaXterm.ini\")) {",
+        "echo @\"[Misc]",
+        "HomeDir=_MobaFolder_\\homedir",
+        "\"@ | Set-Content $dir\\MobaXterm.ini",
+        "}"
     ],
     "bin": "MobaXterm.exe",
     "shortcuts": [
