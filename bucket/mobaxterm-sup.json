@@ -22,6 +22,7 @@
         "echo @\"",
         "[Misc]",
         "HomeDir=_MobaFolder_\\homedir",
+        "SlashDir=_MobaFolder_\\slash",
         "\"@ | Set-Content $dir\\MobaXterm.ini",
         "}"
     ],
@@ -35,7 +36,8 @@
     "persist": [
         "MobaXterm.ini",
         "MobaXterm backup.zip",
-        "homedir"
+        "homedir",
+        "slash"
     ],
     "checkver": {
         "url": "https://mobaxterm.mobatek.net/download-home-edition.html",
