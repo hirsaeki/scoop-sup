@@ -6,17 +6,20 @@
     "license": "MS-PL",
     "url": "https://github.com/nathancorvussolis/corvusskk/releases/download/3.2.0/corvusskk-3.2.0.exe#/setup.exe",
     "hash": "e7cb3957a72e7e558061550bf2a5ae6ca7d1760d37fd804dc36a937fbfe07bc2",
+    "depends": [
+        "gsudo"
+    ],
     "installer": {
         "script": [
-            "if (!(is_admin)) { error 'This package requires admin rights to install'; break }",
-            "Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/quiet', '/norestart') -Verb RunAs"
+            "gsudo Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/quiet', '/norestart') -Verb RunAs",
+            "\"Restart Windows to complete install.\""
         ],
         "keep": "true"
     },
     "uninstaller": {
         "script": [
-            "if (!(is_admin)) { error 'This package requires admin rights to install'; break }",
-            "Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/uninstall', '/quiet', '/norestart') -Verb RunAs"
+            "gsudo Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/uninstall', '/quiet', '/norestart') -Verb RunAs",
+            "\"Restart Windows to complete uninstall.\""
         ]
     },
     "autoupdate": {

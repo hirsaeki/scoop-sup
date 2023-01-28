@@ -7,7 +7,7 @@
     "pre_install": [
         "$src =\"//4NAAoAWwBjAHIAdgBzAGsAawBzAGUAcgB2AF0ADQAKAHAAbwByAHQAPQAxADEANwA4AA0ACgBsAG8AbwBwAGIAYQBjAGsAPQAxAA0ACgBnAG8AbwBnAGwAZQBjAGcAaQBhAHAAaQBfAHUAcgBsAF8AcAByAGUAZgBpAHgAPQBoAHQAdABwAHMAOgAvAC8AdwB3AHcALgBnAG8AbwBnAGwAZQAuAGMAbwBtAC8AdAByAGEAbgBzAGwAaQB0AGUAcgBhAHQAZQA/AGwAYQBuAGcAcABhAGkAcgA9AGoAYQAtAEgAaQByAGEAfABqAGEAJgB0AGUAeAB0AD0ADQAKAGcAbwBvAGcAbABlAGMAZwBpAGEAcABpAF8AdQByAGwAXwBzAHUAZgBmAGkAeAA9ACwADQAKAGQAaQBjAC0AMQA9AC4AXABEAEkAQwBUAFMAXABTAEsASwAtAEoASQBTAFkATwAuAEwATAANAAoAZABpAGMALQAyAD0AZwBvAG8AZwBsAGUAYwBnAGkAYQBwAGkALwBbAF4AQQAtAFoAYQAtAHoAMAAtADkAXQArAFsAYQAtAHoAXQAvAEcALwAxADAAMAAwAC8AZQB1AGMALwANAAoA\"",
         "$ByteArray = [System.Convert]::FromBase64String($src)",
-        "if(!(test-path \"$dir\\crvskkserv.ini\")) { [System.IO.File]::WriteAllBytes(\"$dir\\crvskkserv.ini\", $ByteArray) }"
+        "if(!(test-path \"$persist_dir\\crvskkserv.ini\")) { [System.IO.File]::WriteAllBytes(\"$dir\\crvskkserv.ini\", $ByteArray) }"
     ],
     "depends": [
         "ruby",
