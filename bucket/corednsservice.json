@@ -19,11 +19,11 @@
         "description: CoreDNS Service",
         "exec: \"$coredns\"",
         "args: [\"-conf\", \"corefile\"]",
-        "dir: $selfdir",
+        "dir: \"$selfdir\"",
         "stdout:",
         "  filename: \"$log\"",
         "  maxsize: 100",
-        "  maxbackups 50",
+        "  maxbackups: 50",
         "  maxage: 30",
         "  compress: true",
         "\"@ | Set-Content \"$dir\\corednsservice.yml\"",
@@ -32,12 +32,12 @@
     ],
     "post_install": [
         "cd $dir",
-        "gsudo corednsservice -service install"
+        "gsudo corednsservice -service install | Out-Null"
     ],
     "pre_uninstall": [
         "cd $dir",
-        "gsudo corednsservice -service stop",
-        "gsudo corednsservice -service uninstall"
+        "gsudo corednsservice -service stop | Out-Null",
+        "gsudo corednsservice -service uninstall | Out-Null"
     ],
     "persist": [
         "corednsservice.yml",
