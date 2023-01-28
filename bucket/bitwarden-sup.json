@@ -24,7 +24,7 @@
             "if(!(Test-Path $Path)){",
                 "New-Item -Path $Path -Force",
             "}",
-            "Set-ItemProperty -Path $Path -Value \"$dir\\bitwarden-appdata\\browsers\\$_.Value\"",
+            "Set-Item -Path $Path -Value \"$dir\\bitwarden-appdata\\browsers\\$_.Value\"",
         "}"
     ],
     "bin": "Bitwarden.exe",
