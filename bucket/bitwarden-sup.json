@@ -21,8 +21,8 @@
         "}",
         "$regs.GetEnumerator() | ForEach-Object{",
             "$Path = \"HKCU:\\Software\\$_.Key\\NativeMessagingHosts\\com.8bit.bitwarden\"",
-            "if(!Test-Path $Path)){",
-                "New-Item -Path $Path -Force'",
+            "if(!Test-Path $Path){",
+                "New-Item -Path $Path -Force",
             "}",
             "Set-ItemProperty -Path $Path -Value \"$dir\\bitwarden-appdata\\browsers\\$_.Value\"",
         "}"
