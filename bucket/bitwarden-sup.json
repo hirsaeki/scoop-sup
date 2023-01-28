@@ -23,6 +23,8 @@
             "$appsub = $_.key",
             "$itemvalue = $_.value",
             "$Path = \"HKCU:\\Software\\$appsub\\NativeMessagingHosts\\com.8bit.bitwarden\"",
+            "Write-Host $Path",
+            "Write-Host $itemvalue",
             "if(!(Test-Path $Path)){",
                 "New-Item -Path $Path -Force",
             "}",
