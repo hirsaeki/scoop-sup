@@ -9,6 +9,9 @@
         "script": [
             "Get-ChildItem $dir -filter '*.ttf' | ForEach-Object {",
             "   $fontdir = \"$env:LocalAppData\\Microsoft\\Windows\\Fonts\"",
+            "   if(!(Test-Path $fontdir)){",
+            "     New-Item $fontdir -ItemType Directory",
+            "   }",
             "   New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Fonts' -Name $_.Name.Replace($_.Extension, ' (TrueType)') -Value \"$fontdir\\$($_.Name)\" -Force | Out-Null",
             "   Copy-Item $_.Fullname -destination \"$fontdir\"",
             "}"
