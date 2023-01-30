@@ -25,9 +25,9 @@
         "if(!(test-path \"$persist_dir\\History.json\")) { New-Item \"$dir\\History.json\" | Out-Null }"
     ],
     "pre_uninstall": [
-        "if(!(test-path \"$dir\\UserSetting.json\")) { Copy-Item \"$dir\\UserSetting.json\" \"$persist_dir\\UserSetting.json\" | Out-Null }",
-        "if(!(test-path \"$dir\\Bookmark.json\")) { Copy-Item \"$dir\\Bookmark.json\" \"$persist_dir\\Bookmark.json\" | Out-Null }",
-        "if(!(test-path \"$dir\\History.json\")) { Copy-Item \"$dir\\History.json\" \"$persist_dir\\History.json\" | Out-Null }"
+        "if(!(test-path \"$dir\\UserSetting.json\")) { Copy-Item \"$dir\\UserSetting.json\" \"$persist_dir\\UserSetting.json\" -Force | Out-Null }",
+        "if(!(test-path \"$dir\\Bookmark.json\")) { Copy-Item \"$dir\\Bookmark.json\" \"$persist_dir\\Bookmark.json\" -Force | Out-Null }",
+        "if(!(test-path \"$dir\\History.json\")) { Copy-Item \"$dir\\History.json\" \"$persist_dir\\History.json\" -Force | Out-Null }"
     ],
     "persist": [
         "UserSetting.json",
