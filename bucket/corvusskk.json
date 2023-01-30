@@ -11,15 +11,15 @@
     ],
     "installer": {
         "script": [
-            "gsudo Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/quiet', '/norestart') -Verb RunAs",
-            "\"Restart Windows to complete install.\""
+            "Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/quiet', '/norestart') -Verb RunAs",
+            "\"Need to restart Windows to complete install.\""
         ],
         "keep": "true"
     },
     "uninstaller": {
         "script": [
-            "gsudo Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/uninstall', '/quiet', '/norestart') -Verb RunAs",
-            "\"Restart Windows to complete uninstall.\""
+            "Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/uninstall', '/quiet', '/norestart') -Verb RunAs",
+            "\"Need to restart Windows to complete uninstall.\""
         ]
     },
     "autoupdate": {
