@@ -19,6 +19,16 @@
         "url": "https://bitbucket.org/neelabo/neeview/downloads/",
         "regex": "NeeView([\\d.]+)\\.zip"
     },
+    "pre_install": [
+        "if(!(test-path \"$persist_dir\\UserSetting.json\")) { New-Item \"$dir\\UserSetting.json\" | Out-Null }",
+        "if(!(test-path \"$persist_dir\\Bookmark.json\")) { New-Item \"$dir\\Bookmark.json\" | Out-Null }",
+        "if(!(test-path \"$persist_dir\\History.json\")) { New-Item \"$dir\\History.json\" | Out-Null }"
+    ],
+    "persist": [
+        "UserSetting.json",
+        "Bookmark.json",
+        "History.json"
+    ],
     "autoupdate": {
         "architecture": {
             "64bit": {
