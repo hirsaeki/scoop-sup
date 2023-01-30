@@ -14,13 +14,16 @@
         "keep": "true"
     },
     "post_install": [
-        "if ([System.IO.Directory]::GetFileSyetemEntries(\"$env:AppData\\CorvusSKK\")[0] -ne \"$persist_dir\\corvusskk-appdata\"){",
+        "if (!(Test-Path \"$env:AppData\\CorvusSKK\")){",
+            "New-Item -ItemType Junction -Path \"$env:AppData\\CorvusSKK\" -Value \"$persist_dir\\corvusskk-appdata\"",
+        "} elseif ([System.IO.Directory]::GetFileSyetemEntries(\"$env:AppData\\CorvusSKK\")[0] -ne \"$persist_dir\\corvusskk-appdata\"){",
             "Start-Process -FilePath \"taskkill.exe\" -ArgumentList \"/im imcrvmgr.exe\" -NoNewWindow -Wait -PassThru | Out-Null",
             "Get-ChildItem \"$env:AppData\\CorvusSKK\" -Recurse | ForEach-Object {",
-                "Move-Item $_.FullName (Join-Path \"$persist_dir\\corvusskk-appdata\" $_.FullName.Substring($Item.Length + 1)",
+                "Move-Item $_.FullName (Join-Path \"$persist_dir\\corvusskk-appdata\" $_.FullName.Substring($Item.Length + 1))",
             "}",
             "Remove-Item \"$env:AppData\\CorvusSKK\" -Force",
             "New-Item -ItemType Junction -Path \"$env:AppData\\CorvusSKK\" -Value \"$persist_dir\\corvusskk-appdata\"",
+            "Start-Process -FilePath \"$env:SystemRoot\\System32\\IME\\IMCRVSKK\\imcrvmgr.exe\"",
         "}",
         "if (!(Test-Path $persist_dir\\corbusskk-appdata\\config.xml)){",
             "\"Create Config\"",
