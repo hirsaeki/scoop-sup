@@ -16,10 +16,10 @@
     "post_install": [
         "if (!(Test-Path \"$env:AppData\\CorvusSKK\")){",
             "New-Item -ItemType Junction -Path \"$env:AppData\\CorvusSKK\" -Value \"$persist_dir\\corvusskk-appdata\"",
-        "} elseif ([System.IO.Directory]::GetFileSystemEntries(\"$env:AppData\\CorvusSKK\")[0] -ne \"$persist_dir\\corvusskk-appdata\"){",
+        "} elseif ((Get-Item $env:APPDATA\\CorvusSKK | Select-Object -ExpandProperty Target) -ne \"$persist_dir\\corvusskk-appdata\"){",
             "Start-Process -FilePath \"taskkill.exe\" -ArgumentList \"/im imcrvmgr.exe\" -NoNewWindow -Wait -PassThru | Out-Null",
             "Get-ChildItem \"$env:AppData\\CorvusSKK\" -Recurse | ForEach-Object {",
-                "Move-Item $_.FullName (Join-Path \"$persist_dir\\corvusskk-appdata\" $_.FullName.Substring($Item.Length + 1))",
+                "Move-Item $_.FullName \"$persist_dir\\corvusskk-appdata\"",
             "}",
             "Remove-Item \"$env:AppData\\CorvusSKK\" -Force",
             "New-Item -ItemType Junction -Path \"$env:AppData\\CorvusSKK\" -Value \"$persist_dir\\corvusskk-appdata\"",
