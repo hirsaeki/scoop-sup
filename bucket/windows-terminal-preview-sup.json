@@ -38,7 +38,7 @@
         "if (!(Test-Path \"$appdata_path\")){",
             "New-Item -ItemType Junction -Path \"$appdata_path\" -Value \"$persist_dir\\windows-terminal-appdata\"",
         "} elseif ((Get-Item \"$appdata_path\"| Select-Object -ExpandProperty Target) -ne \"$persist_dir\\windows-terminal-appdata\"){",
-            "(Get-WmiObject Win32_Precess | Where-Object { $_.Path.StartsWith((Split-Path \"$dir\" -Parent)) }) | Foreach-Object { $_.Terminate() }",
+            "(Get-WmiObject Win32_Process | Where-Object { $_.Path.StartsWith((Split-Path \"$dir\" -Parent)) }) | Foreach-Object { $_.Terminate() }",
             "Get-ChildItem \"$appdata_path\" -Recurse | ForEach-Object {",
                 "Move-Item $_.FullName \"$persist_dir\\windows-terminal-appdata\"",
             "}",
