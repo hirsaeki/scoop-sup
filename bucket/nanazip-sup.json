@@ -3,7 +3,7 @@
     "description": "The 7-Zip derivative intended for the modern Windows experience",
     "homepage": "https://github.com/M2Team/NanaZip",
     "license": "MIT",
-    "url": "https://github.com/M2Team/NanaZip/releases/download/2.0.396/40174MouriNaruto.NanaZipPreview_2.0.396.0_gnj4mf6z9tkrc.msixbundle#/dl.7z",
+    "url": "https://github.com/M2Team/NanaZip/releases/download/2.0.396/40174MouriNaruto.NanaZip_2.0.396.0_gnj4mf6z9tkrc.msixbundle#/dl.7z",
     "hash": "67bc86ae748957edffa9fff9585e52fa582efe7470633feeb3e036f3d18c06ad",
     "installer": {
         "script": [
