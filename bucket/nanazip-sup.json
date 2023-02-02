@@ -1,41 +1,30 @@
 {
-    "version": "2.0.450",
+    "version": "2.1.451",
     "description": "The 7-Zip derivative intended for the modern Windows experience",
     "homepage": "https://github.com/M2Team/NanaZip",
     "license": "MIT",
-    "url": "https://github.com/M2Team/NanaZip/releases/download/2.0.450/40174MouriNaruto.NanaZip_2.0.450.0_gnj4mf6z9tkrc.msixbundle#/dl.7z",
-    "hash": "2bee289d9e026255073ddcee8082e8d0ad8496b9fe9fe8f8a29080a81a95872e",
+    "url": "https://github.com/M2Team/NanaZip/releases/download/2.1.451/40174MouriNaruto.NanaZipPreview_2.1.451.0_gnj4mf6z9tkrc.msixbundle#/dl.7z",
+    "hash": "69e8e6054e60377f9a6231789f399c8791a7bf9851b96621877c58eff553fbf1",
     "installer": {
         "script": [
             "$winVer = [Environment]::OSVersion.Version",
             "if (($winver.Major -lt '10') -or ($winVer.Build -lt 19041)) { error 'At least Windows 10 2004 (build 18362) is required.'; break }",
+            "Remove-Item -Path \"$dir\\*\" -Exclude '*.msix' -Force",
             "Expand-7zipArchive -Path \"$dir\\*$(switch ($architecture) { '64bit' { 'x64' } '32bit' { 'x86' } 'arm64' { 'ARM64' } }).msix\" -DestinationPath \"$dir\" -Removal",
-            "Get-ChildItem \"$dir\\Assets\" '*.png' | Rename-Item -NewName { $_.Name.Replace('%7B', '{').Replace('%7D', '}') }",
             "Remove-Item -Path \"$dir\\*\" -Include '*.msix' -Force"
         ]
     },
-    "bin": [
-        [
-            "NanaZipC.exe",
-            "7z"
-        ],
-        [
-            "NanaZipG.exe",
-            "7zG"
-        ]
-    ],
     "shortcuts": [
         [
             "NanaZip.exe",
             "NanaZip"
         ]
     ],
-    "checkver": "github",
+    "checkver": {
+        "url": "https://github.com/M2Team/NanaZip/releases",
+        "regex": "NanaZip/tree/([\\d.]+)"
+    },
     "autoupdate": {
-        "url": "https://github.com/M2Team/NanaZip/releases/download/$version/40174MouriNaruto.NanaZip_$version.0_gnj4mf6z9tkrc.msixbundle#/dl.7z",
-        "hash": {
-            "url": "https://github.com/M2Team/NanaZip/releases/tag/$version",
-            "regex": "(?s)$basename.*?$sha256"
-        }
+        "url": "https://github.com/M2Team/NanaZip/releases/download/$version/40174MouriNaruto.NanaZip_$version.0_gnj4mf6z9tkrc.msixbundle#/dl.7z"
     }
 }
