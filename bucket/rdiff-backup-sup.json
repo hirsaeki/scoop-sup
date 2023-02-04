@@ -20,6 +20,9 @@
         }
     },
     "bin": "rdiff-backup.exe",
+    "persist":[
+        "persist-scripts"
+    ],
     "checkver": {
         "github": "https://github.com/rdiff-backup/rdiff-backup"
     },
