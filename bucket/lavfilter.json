@@ -2,9 +2,9 @@
     "homepage": "https://github.com/Nevcairiel/LAVFilters/",
     "description": "Open-Source DirectShow Media Splitter and Decoders ",
     "license": "GPL-2.0",
-    "version": "0.77.1",
-    "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/0.77.1/LAVFilters-0.77.1-x64.zip",
-    "hash": "d72252348992aebe376ff5b7dbdc37b4eecc30ecdeabbf6b8013e30ef3db66c6",
+    "version": "0.77.2",
+    "url": "https://github.com/Nevcairiel/LAVFilters/releases/download/0.77.2/LAVFilters-0.77.2-x64.zip",
+    "hash": "4e4c3eb8cac657375983dc5df71706470f32812b2876a5f48eee6be4fb4ff9dd",
     "depends": "gsudo",
     "pre_install": [
         "ForEach($file in Get-ChildItem $dir\\ -Filter install_*.bat) {(Get-Content $file) | ForEach-Object {$_ -replace \"regsvr32.exe LAV\",\"regsvr32.exe /s LAV\"} | Out-File -Encoding oem $file}",
