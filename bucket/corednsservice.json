@@ -42,6 +42,7 @@
     "persist": [
         "corednsservice.yml",
         "log",
+        "zones",
         "corefile"
     ],
     "url": "https://github.com/hnakamur/corednsservice/releases/download/v0.1.0/corednsservice.exe",
