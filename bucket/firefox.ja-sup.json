@@ -1,6 +1,7 @@
 {
     "homepage": "https://www.mozilla.org/ja/firefox/new/",
     "version": "118.0.1",
+    "license": "MPL-2.0",
     "notes": [
         "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
         "  - Run 'Firefox Profile Manager', choose 'Scoop' then click 'Start Firefox'.",
@@ -9,27 +10,15 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://download.mozilla.org/?product=firefox-118.0.1-SSL&os=win64&lang=ja#/firefox-setup.exe",
+            "url": "https://download.mozilla.org/?product=firefox-118.0.1-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
             "hash": "8a65d2f8fbd6d412fd0bffcb2a1c7d715eb7b01ec4d0fab4a922857cd7fcc5e9"
         },
         "32bit": {
-            "url": "https://download.mozilla.org/?product=firefox-118.0.1-SSL&os=win&lang=ja#/firefox-setup.exe",
+            "url": "https://download.mozilla.org/?product=firefox-118.0.1-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
             "hash": "5a47cf7dccd7ae071389d185a32eb956d5d1251064a38d38d126dae66236c7b1"
         }
     },
-    "bin": "firefox.exe",
-    "shortcuts": [
-        [
-            "firefox.exe",
-            "Firefox"
-        ],
-        [
-            "firefox.exe",
-            "Firefox Profile Manager",
-            "-P"
-        ]
-    ],
-    "pre_install": "echo \"[Install]`nInstallDirectoryPath=$dir`nQuickLaunchShortcut=false`nDesktopShortcut=false`nStartMenuShortcuts=false\" | Set-Content \"$dir\\install.ini\"",
+    "extract_dir": "core",
     "post_install": [
         "firefox -CreateProfile \"Scoop $persist_dir\\profile\"",
         "$Addition = \"$persist_dir\\addition\"",
@@ -38,14 +27,18 @@
         "  Copy-Item -Path $Addition\\* -Destination $dir -Force -Recurse -ErrorAction SilentlyContinue",
         "}"
     ],
-    "installer": {
-        "file": "firefox-setup.exe",
-        "args": "/INI=$dir\\install.ini"
-    },
-    "uninstaller": {
-        "file": "uninstall\\helper.exe",
-        "args": "/S"
-    },
+    "bin": "$original_dir\\firefox.exe",
+    "shortcuts": [
+        [
+            "$original_dir\\firefox.exe",
+            "Firefox"
+        ],
+        [
+            "$original_dir\\firefox.exe",
+            "Firefox Profile Manager",
+            "-P"
+        ]
+    ],
     "persist": [
         "distribution",
         "profile"
@@ -57,14 +50,14 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win64&lang=ja#/firefox-setup.exe",
+                "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
                 "hash": {
                     "find": "([a-fA-F0-9]{64})\\s+(?:win64/ja/Firefox Setup ([\\d.]+).exe)",
                     "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$version/SHA256SUMS"
                 }
             },
             "32bit": {
-                "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win&lang=ja#/firefox-setup.exe",
+                "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
                 "hash": {
                     "find": "([a-fA-F0-9]{64})\\s+(?:win32/ja/Firefox Setup ([\\d.]+).exe)",
                     "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$version/SHA256SUMS"
