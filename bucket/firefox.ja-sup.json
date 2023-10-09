@@ -35,7 +35,7 @@
         "$shortcut.TargetPath = \"$original_dir\\firefox.exe\"",
         "$shortcut.Arguments = \"-P\"",
         "$shortcut.Save()",
-        "echo \"path = `\"$original_dir\\firefox.exe`\" | Set-Content \"$scoopdir\\shims\\firefox.shim\""
+        "echo \"path = `\"$original_dir\\firefox.exe`\"\" | Set-Content \"$scoopdir\\shims\\firefox.shim\""
     ],
     "bin": "firefox.exe",
     "shortcuts": [
