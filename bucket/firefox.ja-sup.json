@@ -25,16 +25,26 @@
         "if (Test-Path $Addition) {",
         "  info 'Copying additional items...'",
         "  Copy-Item -Path $Addition\\* -Destination $dir -Force -Recurse -ErrorAction SilentlyContinue",
-        "}"
+        "}",
+        "echo \"update bin/shortcuts\"",
+        "$shell = New-Object -COM WScript.Shell",
+        "$shortcut = $shell.CreateShortCut(\"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Scoop Apps\\Firefox.lnk\")",
+        "$shortcut.TargetPath = \"$original_dir\\firefox.exe\"",
+        "$shortcut.Save()",
+        "$shortcut = $shell.CreateShortCut(\"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Scoop Apps\\Firefox Profile Manager.lnk\")",
+        "$shortcut.TargetPath = \"$original_dir\\firefox.exe\"",
+        "$shortcut.Arguments = \"-P\"",
+        "$shortcut.Save()",
+        "echo \"path = `\"$original_dir\\firefox.exe`\" | Set-Content \"$scoopdir\\shims\\firefox.shim\""
     ],
-    "bin": "$original_dir\\firefox.exe",
+    "bin": "firefox.exe",
     "shortcuts": [
         [
-            "$original_dir\\firefox.exe",
+            "firefox.exe",
             "Firefox"
         ],
         [
-            "$original_dir\\firefox.exe",
+            "firefox.exe",
             "Firefox Profile Manager",
             "-P"
         ]
