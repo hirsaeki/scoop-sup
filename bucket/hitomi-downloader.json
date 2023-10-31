@@ -6,12 +6,18 @@
     "url": "https://github.com/KurtBestor/Hitomi-Downloader/releases/download/v3.8f/hitomi_downloader_GUI.zip",
     "hash": "7896a42a2d6648fb1a77e43f376dad30b34f072cceaac081bedc82b7c20c1f92",
     "bin": "hitomi_downloader_GUI.exe",
-    "pre_install": "gsudo taskkill /im hitomi_downloader_GUI.exe",
+    "pre_install": [
+        "gsudo taskkill /im hitomi_downloader_GUI.exe",
+        "if (!(Test-Path -Path $dir\\hitomi_downloader_GUI.ini)) { New-Item -ItemType File -Path $dir\\hitomi_downloader_GUI.ini}"
+    ],
     "shortcuts": [
         [
             "hitomi_downloader_GUI.exe",
             "hitomi_downloader"
         ]
+    ],
+    "persist": [
+        "hitomi_downloader_GUI.ini"
     ],
     "checkver": {
         "url": "https://api.github.com/repos/KurtBestor/Hitomi-Downloader/releases",
