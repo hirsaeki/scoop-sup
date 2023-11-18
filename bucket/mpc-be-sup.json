@@ -44,9 +44,6 @@
         "mpc-be64.ini",
         "mpc-be.ini",
         "Default.mpcpl",
-        "Lang",
-        "Shaders",
-        "Shaders11"
     ],
     "checkver": {
         "sourceforge": "mpcbe/MPC-BE/Release builds"
