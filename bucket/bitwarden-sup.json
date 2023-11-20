@@ -18,6 +18,7 @@
         "\"Mozilla\" = \"firefox.json\";",
         "\"Google\\Chrome\" = \"chrome.json\";",
         "\"Microsoft\\Edge\" = \"chrome.json\";",
+        "\"Sidekick\" = \"chrome.json\";",
         "}",
         "$regs.GetEnumerator() | ForEach-Object{",
         "$appsub = $_.key",
