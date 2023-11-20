@@ -1,6 +1,6 @@
 {
-    "##": "cursor 编辑器",
-    "version": "0.2.36",
+    "##": "cursor sup",
+    "version": "0.2.35",
     "description": "Cursorは、GPT-4と統合されたコードエディタで、コードをすばやく記述、修正、議論することができます。",
     "license": {
         "identifier": "Proprietary",
@@ -12,7 +12,7 @@
         "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse"
     ],
     "url": "https://dl.todesktop.com/230313mzl4w4u92/windows/nsis/x64#/dl.7z",
-    "hash": "78926fbbb120971866c127c78bd079fdf8868a1ebff05a5195fac057a76083e3",
+    "hash": "",
     "shortcuts": [
         [
             "Cursor.exe",
