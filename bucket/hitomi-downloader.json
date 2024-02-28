@@ -1,10 +1,10 @@
 {
-    "version": "v4.0",
+    "version": "v4.1",
     "description": "Simple Web content downloader",
     "homepage": "https://github.com/KurtBestor/Hitomi-Downloader",
     "license": "MS-PL",
-    "url": "https://github.com/KurtBestor/Hitomi-Downloader/releases/download/v4.0/hitomi_downloader_GUI.zip",
-    "hash": "ab4f81d780b4502318cd251ed3958edb2aec5de41bbc58a21b886242b4c88482",
+    "url": "https://github.com/KurtBestor/Hitomi-Downloader/releases/download/v4.1/hitomi_downloader_GUI.zip",
+    "hash": "ab58de381ea3b49783aad509e6f1cb80481562c44371771438ab0288ba44076d",
     "bin": "hitomi_downloader_GUI.exe",
     "pre_install": [
         "gsudo taskkill /im hitomi_downloader_GUI.exe",
