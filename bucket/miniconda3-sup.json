@@ -34,7 +34,7 @@
     },
     "bin": [
         [
-            "_conda.exe",
+            "condabin\conda.bat",
             "conda"
         ]
     ],
