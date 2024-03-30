@@ -12,7 +12,9 @@
     ],
     "extract_dir": "Siki-win32-x64",
     "persist": [
-        "data"
+        "data",
+        "components"
+
     ],
     "checkver": {
         "url": "https://sikiapp.net/",
