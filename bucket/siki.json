@@ -1,8 +1,8 @@
 {
     "homepage": "https://sikiapp.net/",
-    "version": "0.28.3",
-    "url": "https://sikiapp.net/archives/0.28.3/Siki-win32-x64-0.28.3.zip",
-    "hash": "7e45459d87ce69ae4041ae8285181faf04bc4a275ab5f4f7946f9e0abefe7e4d",
+    "version": "0.28.4",
+    "url": "https://sikiapp.net/archives/0.28.4/Siki-win32-x64-0.28.4.zip",
+    "hash": "524ae675b7e94759eb20143b6ffd5d4619f49b017bd1c20bf7c5de616fd054f1",
     "license": "",
     "shortcuts": [
         [
@@ -14,7 +14,6 @@
     "persist": [
         "data",
         "components"
-
     ],
     "checkver": {
         "url": "https://sikiapp.net/",
