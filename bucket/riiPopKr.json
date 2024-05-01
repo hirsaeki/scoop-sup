@@ -5,10 +5,9 @@
     "version": "3.62",
     "url": "https://aoirii.babyblue.jp/font/riipopkk/riipopkr.zip",
     "hash": "F783F174A9BF7850A003A002C925FE20A208AB7753B6F29516EB358903608E54",
-    "extract_dir": "riipopkr_3.62",
+    "extract_dir": "riipopkr",
     "installer": {
         "script": [
-            "if(test-path \"$dir\\riipopkr*\" -PathType Container) { Move-Item \"$dir\\riipopkr*\\*\" \"$dir\" | Out-Null }",
             "Get-ChildItem $dir -filter '*.otf' | ForEach-Object {",
             "   $fontdir = \"$env:LocalAppData\\Microsoft\\Windows\\Fonts\"",
             "   if(!(Test-Path $fontdir)){",
@@ -27,8 +26,5 @@
             "   Remove-Item \"$fontdir\\$($_.Name)\" -Force -ErrorAction SilentlyContinue",
             "}"
         ]
-    },
-    "autoupdate": {
-        "extract_dir": "riipopkr_$version"
     }
 }
