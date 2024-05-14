@@ -1,6 +1,6 @@
 {
     "homepage": "https://www.mozilla.org/ja/firefox/new/",
-    "version": "125.0.3",
+    "version": "126.0",
     "license": "MPL-2.0",
     "notes": [
         "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
@@ -10,12 +10,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://download.mozilla.org/?product=firefox-125.0.3-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
-            "hash": "4e0d5c83b584d9ae052ff197178b64de0014f5d7023f9b9d3fe01849b775aafb"
+            "url": "https://download.mozilla.org/?product=firefox-126.0-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
+            "hash": "441c89f6478f8346cd1e14a9500ce1cd465372c08cdc6df37ef0e92a35418d14"
         },
         "32bit": {
-            "url": "https://download.mozilla.org/?product=firefox-125.0.3-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
-            "hash": "ffb790c9dcb73985f16d71977fecdc3d0c77160c1c484bf1f6cf798e249a00db"
+            "url": "https://download.mozilla.org/?product=firefox-126.0-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
+            "hash": "97af363adcb36b4a6b6e57da316ed183ed16164de8a8ff126ce8f32acad87c4f"
         }
     },
     "extract_dir": "core",
