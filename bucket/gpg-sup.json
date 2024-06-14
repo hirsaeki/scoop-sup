@@ -15,7 +15,6 @@
         "GnuPG/bin/gpgtar.exe",
         "GnuPG/bin/gpgv.exe",
         "GnuPG/bin/gpg-connect-agent.exe",
-        "bin/gpa.exe",
         "bin/kleopatra.exe"
     ],
     "pre_install": [
@@ -36,7 +35,6 @@
     "uninstaller": {
         "script": [
             "",
-            "& cmd @('/c','taskkill /F /T /IM gpa.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM kleopatra.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM dbus-daemon.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM dirmngr.exe 1>NUL 2>NUL')",
