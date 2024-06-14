@@ -43,7 +43,7 @@
 			"& cmd @('/c','taskkill /F /T /IM scdaemon.exe 1>NUL 2>NUL')"
 		]
 	},
-	"checkver": { "url": "https://www.gpg4win.org/download.html", "re": "GnuPG ([0-9\\.-]+)" },
+	"checkver": { "url": "https://www.gpg4win.org/download.html", "re": "Gpg4win ([0-9\\.-]+)" },
     "autoupdate" {
         "url": "https://files.gpg4win.org/gpg4win-$version.exe#/dl.7z"
     }
