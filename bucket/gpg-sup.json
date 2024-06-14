@@ -1,12 +1,15 @@
 {
     "homepage": "https://gnupg.org",
-    "version": "2.3.8",
+    "version": "4.3.1",
     "license": "GPLv3",
-    "url": ["https://files.gpg4win.org/gpg4win-4.0.4.exe#/dl.7z"],
-    "hash": ["sha256:a750608969a075f132da31f538231ac3a2d3538e3eec8e8603d1573284745d0e"],
+    "url": "https://files.gpg4win.org/gpg4win-4.3.1.exe#/dl.7z",
+    "hash": "2db44b086d860c51a4f45f43a739cd20fb0822189deb1c1cf13e4b5a3b05bc3b",
     "bin": [
         "GnuPG/bin/gpg.exe",
-        ["GnuPG/bin/gpg.exe", "gpg2"],
+        [
+            "GnuPG/bin/gpg.exe",
+            "gpg2"
+        ],
         "GnuPG/bin/gpgconf.exe",
         "GnuPG/bin/gpgsm.exe",
         "GnuPG/bin/gpgtar.exe",
@@ -37,7 +40,10 @@
             "& cmd @('/c','taskkill /F /T /IM scdaemon.exe 1>NUL 2>NUL')"
         ]
     },
-    "checkver": { "url": "https://www.gpg4win.org/download.html", "re": "Gpg4win ([0-9.]+)" },
+    "checkver": {
+        "url": "https://www.gpg4win.org/download.html",
+        "re": "Gpg4win ([0-9.]+)"
+    },
     "autoupdate": {
         "url": "https://files.gpg4win.org/gpg4win-$version.exe#/dl.7z"
     }

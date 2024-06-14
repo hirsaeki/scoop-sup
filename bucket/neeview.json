@@ -1,11 +1,11 @@
 {
-    "version": "39.5",
+    "version": "41.2",
     "description": "Image viewer",
     "homepage": "https://bitbucket.org/neelabo/neeview/wiki/Home",
     "license": "MIT",
-    "url": "https://bitbucket.org/neelabo/neeview/downloads/NeeView39.5-x64.zip",
-    "hash": "5117abdb7b5c3537680ff7f8fd652dc32577c81c697e1daea93c0cbfb775be80",
-    "extract_dir": "NeeView39.5-x64",
+    "url": "https://bitbucket.org/neelabo/neeview/downloads/NeeView41.2.zip",
+    "hash": "e831c864ea653ce805566a678a7981caac0baa459a8524f4282795654bdd229f",
+    "extract_dir": "NeeView41.2",
     "checkver": {
         "url": "https://bitbucket.org/neelabo/neeview/downloads/",
         "regex": "NeeView([\\d.]+)\\.zip"
