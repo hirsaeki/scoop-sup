@@ -19,7 +19,7 @@
         "bin/kleopatra.exe"
     ],
     "pre_install": [
-        "if ($env:GnuPGHOME) { echo $env:GnuPGHOME} else {echo empty)}"
+        "if ($env:GnuPGHOME) { echo $env:GnuPGHOME } else { echo \"empty\" }"
     ],
     "uninstaller": {
         "script": [
