@@ -44,7 +44,7 @@
     ]
   },
   "checkver": { "url": "https://www.gpg4win.org/download.html", "re": "Gpg4win ([0-9\\.-]+)" },
-    "autoupdate" {
-        "url": "https://files.gpg4win.org/gpg4win-$version.exe#/dl.7z"
-    }
+  "autoupdate": {
+      "url": "https://files.gpg4win.org/gpg4win-$version.exe#/dl.7z"
+  }
 }
