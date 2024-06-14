@@ -31,8 +31,7 @@
         "script": [
             "cd $dir",
             ".\\install.bat"
-        ],
-        "keep": true
+        ]
     },
     "uninstaller": {
         "file": "uninstall.bat",

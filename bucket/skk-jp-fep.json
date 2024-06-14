@@ -10,7 +10,7 @@
         "script": [
             "cscript $dir\\skkfep_azik.js"
         ],
-        "keep": "true"
+        "keep": true
     },
     "uninstaller": {
         "file": "skkfep_azik.js",

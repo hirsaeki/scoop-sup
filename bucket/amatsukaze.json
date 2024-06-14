@@ -6,7 +6,7 @@
     "license": "MIT",
     "url": "https://github.com/rigaya/Amatsukaze/releases/download/0.9.7.7/Amatsukaze_0.9.7.7.zip",
     "extract_dir": "Amatsukaze",
-    "hash": "",
+    "hash": "sha1:9ae8a565d2855800e7f78b6dff1fb37af312d819",
     "bin": [
         "Amatsukaze.vbs",
         "AmatsukazeClient.vbs",

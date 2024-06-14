@@ -32,7 +32,6 @@
         "magick $dir\\share\\icons\\hicolor\\16x16\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\22x22\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\24x24\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\32x32\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\48x48\\apps\\virt-viewer.png $dir\\share\\icons\\hicolor\\256x256\\apps\\virt-viewer.png $dir\\remote-viewer.ico"
     ],
     "checkver": {
-        "url": "",
         "regex": "virt-viewer-x86-([\\d.-]+)\\.msi",
         "reverse": true
     },

@@ -11,7 +11,7 @@
             "Start-Process -Wait \"$dir\\setup.exe\" -ArgumentList @('/quiet', '/norestart') -Verb RunAs",
             "Write-Host \"Need to restart Windows to complete install.\" -ForegroundColor Red"
         ],
-        "keep": "true"
+        "keep": true
     },
     "post_install": [
         "if (!(Test-Path \"$env:AppData\\CorvusSKK\")){",
