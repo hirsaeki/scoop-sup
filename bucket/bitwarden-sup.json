@@ -38,6 +38,12 @@
         ]
     ],
     "persist": "bitwarden-appdata",
+    "uninstaller": {
+        "script": [
+            "",
+            "& cmd @('/c','taskkill /F /T /IM Bitwarden.exe 1>NUL 2>NUL')"
+        ]
+    },
     "checkver": {
         "url": "https://api.github.com/repos/bitwarden/clients/releases",
         "regex": "tag/desktop-v([\\d.]+)"
