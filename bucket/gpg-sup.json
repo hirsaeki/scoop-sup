@@ -26,7 +26,7 @@
         "# respect USER value, if defined",
         "if ($env:GnuPGHOME) { } else {",
         "    # otherwise, 1st existing known default; otherwise, 1st of known defaults",
-        "    $default_dirs = @( \"$dir\\.gnupg\",\"$env:APPDATA\\gnupg\", \"$env:USERPROFILE\\.gnupg\", \"$env:USERPROFILE\\.keydb\" )",
+        "    $default_dirs = @( \"$dir\\.gnupg\", \"$env:APPDATA\\gnupg\", \"$env:USERPROFILE\\.gnupg\", \"$env:USERPROFILE\\.keydb\" )",
         "    $val = @( $($default_dirs |% { get-item $_ -ea silent }), $default_dirs[0] ) | select -first 1",
         "    # ensure directory exists",
         "    new-item $val -type directory -force | out-null",
@@ -38,11 +38,10 @@
     ],
     "uninstaller": {
         "script": [
-            "",
             "& cmd @('/c','taskkill /F /T /IM kleopatra.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM dbus-daemon.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM dirmngr.exe 1>NUL 2>NUL')",
-            "& cmd @('/c','gpg-connect-agent killagent /bye')",
+            "if (Get-Process -Name \"gpg-agent\" -ErrorAction SilentlyContinue) { gpg-connect-agent killagent /bye 1>$null 2>$null }",
             "& cmd @('/c','taskkill /F /T /IM gpg-connect-agent.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM keyboxd.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM scdaemon.exe 1>NUL 2>NUL')"
@@ -54,5 +53,9 @@
     },
     "autoupdate": {
         "url": "https://files.gpg4win.org/gpg4win-$version.exe#/dl.7z"
-    }
+    },
+    "notes" : [
+        "You should restart this shell session to enable \"GnuPG\" environment variable before use gpg command.",
+        "To avoid creating unwanted directories."
+    ]
 }
