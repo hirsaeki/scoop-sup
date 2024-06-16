@@ -8,17 +8,10 @@
     "hash": "7dbf603991b3dab59d3e1681a2ce85f310ad52a928a93068309c75d87ba0e52f",
     "pre_install": [
         "if(test-path \"$dir\\paperkey*\" -PathType Container) {",
-        "    Move-Item @( \"$dir\\paperkey-*\\*.exe\", \"$dir\\paperkey-*\\*.txt\" ) \"$dir\" | Out-Null }",
+        "    Move-Item @( \"$dir\\paperkey-*\\*.exe\", \"$dir\\paperkey-*\\*.txt\" ) \"$dir\" | Out-Null",
         "    Remove-Item \"$dir\\paperkey-*\" -Recurse",
         "}"
     ],
-    "installer": {
-        "script": [
-            "& 7z.exe x \"$dir\\dl.zip\" -o \"$dir\" -y",
-            "Move-Item @( \"$dir\\paperkey-$version-win32\\paperkey.exe\", \"$dir\\paperkey-$version-win32\\paperkey.txt\" ) \"$dir\"",
-            "Remove-Item @( \"$dir\\paperkey-*.*\" ) -Recurse"
-        ]
-    },
     "bin": "paperkey.exe",
     "autoupdate": {
         "url": "https://github.com/dmshaw/paperkey/releases/download/v$version/paperkey-$version-win32.zip"
