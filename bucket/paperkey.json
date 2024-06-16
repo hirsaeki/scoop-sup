@@ -1,0 +1,28 @@
+{
+    "version": "1.5",
+    "description": "Paperkey an OpenPGP key archiver",
+    "homepage": "https://github.com/dmshaw/paperkey",
+    "checkver": "github",
+    "license": "MIT",
+    "url": "https://github.com/dmshaw/paperkey/releases/download/v1.5/paperkey-1.5-win32.zip",
+    "hash": "68f54a5587e58307cdf37deaca364dd72c807fc5bf3867726141605666e102ca",
+    "pre_install": [
+        "if(test-path \"$dir\\paperkey*\" -PathType Container) {",
+        "    Move-Item @( \"$dir\\paperkey-*\\*.exe\", \"$dir\\paperkey-*\\*.txt\" ) \"$dir\" | Out-Null }",
+        "    Remove-Item \"$dir\\paperkey-*\" -Recurse",
+        "}"
+    ],
+    "installer": {
+        "script": [
+            "& 7z.exe x \"$dir\\dl.zip\" -o \"$dir\" -y",
+            "Move-Item @( \"$dir\\paperkey-$version-win32\\paperkey.exe\", \"$dir\\paperkey-$version-win32\\paperkey.txt\" ) \"$dir\"",
+            "Remove-Item @( \"$dir\\paperkey-*.*\" ) -Recurse"
+        ]
+    },
+    "bin": [
+        "paperkey.exe"
+    ],
+    "autoupdate": {
+        "url": "https://github.com/dmshaw/paperkey/releases/download/v$version/paperkey-$version-win32.zip"
+    }
+}
