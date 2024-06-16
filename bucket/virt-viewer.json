@@ -1,7 +1,7 @@
 {
     "version": "11.0-1.0",
     "description": "Spice virtual machine viewer",
-    "homepage": "https://virt-manager.org/download/",
+    "homepage": "https://virt-manager.org/download",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
