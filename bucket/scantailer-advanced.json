@@ -1,15 +1,15 @@
 {
-    "version": "0.0",
+    "version": "1.0.19",
     "description": "Interactive post-processing tool for scanned pages",
     "homepage": "https://github.com/4lex4/scantailor-advanced",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://sourceforge.net/projects/scantailor-advanced/files/win/ScanTailor-Advanced-0.0.win-x64.zip",
-            "hash": "sha1:c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5"
+            "url": "https://sourceforge.net/projects/scantailor-advanced/files/win/ScanTailor-Advanced-1.0.19.win-x64.zip",
+            "hash": "sha1:44826d07c8d450688e37fe0ee27c5134f875d013"
         }
     },
-    "extract_dir": "ScanTailor-Advanced-0.0",
+    "extract_dir": "ScanTailor-Advanced-1.0.19 [x64]",
     "bin": "scantailor.exe",
     "shortcuts": [
         [
@@ -17,9 +17,7 @@
             "ScanTailor Advanced"
         ]
     ],
-    "persist": [
-        "config"
-    ],
+    "persist": "config",
     "checkver": {
         "url": "https://sourceforge.net/projects/scantailor-advanced/files/win/",
         "regex": "ScanTailor-Advanced-([\\d.]+)\\.win-x64\\.zip"
@@ -33,4 +31,3 @@
         "extract_dir": "ScanTailor-Advanced-$version [x64]"
     }
 }
-
