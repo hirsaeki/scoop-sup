@@ -1,0 +1,25 @@
+{
+    "version": "0.0",
+    "description": "Japanese OCR with CenterNet for Windows",
+    "homepage": "https://lithium03.info/product/bunkoOCR.html",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://lithium03.info/product/bunkoOCR_$version.zip",
+            "hash": "sha256:HASH_FOR_ARCHIVE",
+            "extract_dir": "bunkoOCR_$version"
+        }
+    },
+    "bin": "bin\\bunkoOCR.exe",
+    "checkver": {
+        "url": "https://lithium03.info/product/bunkoOCR.html",
+        "regex": "bunkoOCR_([\\d]{8})\\.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://lithium03.info/product/bunkoOCR_$version.zip"
+            }
+        }
+    }
+}
