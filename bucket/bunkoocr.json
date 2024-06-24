@@ -10,7 +10,9 @@
             "extract_dir": "bunkoOCR_00000000"
         }
     },
+    "pre_install": "New-Item -Path \"$dir\\bin\\cache\" -Force",
     "bin": "bin\\bunkoOCR.exe",
+    "persist": "bin\\cache",
     "checkver": {
         "url": "https://lithium03.info/product/bunkoOCR.html",
         "regex": "bunkoOCR_([\\d]{8})\\.zip"
@@ -19,7 +21,7 @@
         "architecture": {
             "64bit": {
                 "url": "https://lithium03.info/product/bunkoOCR_$version.zip",
-                "extract_dir": "bunkoOCR_00000000"
+                "extract_dir": "bunkoOCR_$version"
             }
         }
     }
