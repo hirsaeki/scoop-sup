@@ -18,7 +18,8 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://lithium03.info/product/bunkoOCR_$version.zip"
+                "url": "https://lithium03.info/product/bunkoOCR_$version.zip",
+                "extract_dir": "bunkoOCR_00000000"
             }
         }
     }
