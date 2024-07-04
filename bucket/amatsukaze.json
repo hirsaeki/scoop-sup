@@ -23,7 +23,9 @@
         "JL",
         "drcs",
         "avs",
-        "logo"
+        "logo",
+        "bat",
+        "data"
     ],
     "autoupdate": {
         "url": "https://github.com/rigaya/Amatsukaze/releases/download/$version/Amatsukaze_$version.zip"
