@@ -1,14 +1,12 @@
 {
-    "version": "0.0.0.0",
+    "version": "0.07",
     "description": "A replacer video stream of ts",
     "homepage": "https://github.com/rigaya/tsreplace",
     "checkver": "github",
     "license": "MIT",
     "url": "https://some.url.com/some.zip",
-    "hash": "bbf53de038a25c5390786891b626300022eb71cb10cac09e41543d682eafa281",
-    "bin": [
-        "tsreplace.exe"
-    ],
+    "hash": "",
+    "bin": "tsreplace.exe",
     "autoupdate": {
         "architecture": {
             "64bit": {
@@ -20,4 +18,3 @@
         }
     }
 }
-
