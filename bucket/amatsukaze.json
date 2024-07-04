@@ -5,8 +5,13 @@
     "checkver": "github",
     "license": "MIT",
     "url": "https://github.com/rigaya/Amatsukaze/releases/download/0.9.7.8/Amatsukaze_0.9.7.8.zip",
-    "extract_dir": "Amatsukaze",
     "hash": "bbf53de038a25c5390786891b626300022eb71cb10cac09e41543d682eafa281",
+    "pre_install": [
+        "if (Test-Path \"$dir\\Amatsukaze\") {",
+        "    Move-Item \"$dir\\Amatsukaze\\*\" \"$dir\" -Force",
+        "    Remove-Item \"$dir\\Amatsukaze\" -Force -Recurse",
+        "}"
+    ],
     "bin": [
         "Amatsukaze.vbs",
         "AmatsukazeClient.vbs",
