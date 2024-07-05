@@ -7,7 +7,7 @@
     "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.10.0-240112.zip",
     "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
     "bin": "TVTest.exe",
-    "pre_install": "if (Test-Path $args[0]) { (Get-Item $args[0]).LastWriteTime = Get-Date } else { New-Item -ItemType File $args[0] } \"$dir\\TVTest.ini\"",
+    "pre_install": "param($f); if (Test-Path $f) { (Get-Item $f).LastWriteTime = Get-Date } else { New-Item -ItemType File $f } -f \"$dir\\TVTest.ini\"",
     "architecture": {
         "64bit": {
             "extract_dir": "TVTest-0.10.0-240112\\TVTest_64bit"
