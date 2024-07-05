@@ -5,6 +5,7 @@
     "checkver": "TVTest-([\\d.]+-[\\d]+).zip",
     "license": "MIT",
     "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.00.0-000000.zip",
+    "hash": "cdded9054f718fc525478e85228454663a6f49195306e4bcec9ea4dd18a3bb98",
     "bin": "TVTest.exe",
     "architecture": {
         "64bit": {
