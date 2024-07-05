@@ -8,7 +8,7 @@
     "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
     "shortcuts": [
         "TVTest.exe",
-        "TVTest"
+        "TVTest-File"
     ],
     "pre_install": "$file = \"$dir\\TVTest.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file }",
     "persist": [
