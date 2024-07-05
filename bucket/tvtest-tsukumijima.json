@@ -1,18 +1,18 @@
 {
-    "version": "0.00.0-000000",
+    "version": "0.10.0-240112",
     "description": "tvtest build by tsukumijima",
     "homepage": "https://blog.tsukumijima.net/article/tvtest-usage/",
     "checkver": "TVTest-([\\d.]+-[\\d]+).zip",
     "license": "MIT",
-    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.00.0-000000.zip",
-    "hash": "cdded9054f718fc525478e85228454663a6f49195306e4bcec9ea4dd18a3bb98",
+    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.10.0-240112.zip",
+    "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
     "bin": "TVTest.exe",
     "architecture": {
         "64bit": {
-            "extract_dir": "TVTest-0.0.00-000000\\TVTest_64bit"
+            "extract_dir": "TVTest-0.10.0-240112\\TVTest_64bit"
         },
         "32bit": {
-            "extract_dir": "TVTest-0.0.00-000000\\TVTest_32bit"
+            "extract_dir": "TVTest-0.10.0-240112\\TVTest_32bit"
         }
     },
     "autoupdate": {
