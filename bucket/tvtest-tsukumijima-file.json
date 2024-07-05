@@ -15,7 +15,8 @@
     "shortcuts": [
         [
             "TVTest.exe",
-            "TVTest-File"
+            "TVTest-File",
+            "/tvtplay"
         ]
     ],
     "pre_install": "$file = \"$dir\\TVTest.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file }",
