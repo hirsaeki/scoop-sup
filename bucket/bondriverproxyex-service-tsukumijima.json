@@ -1,0 +1,32 @@
+{
+    "version": "0.0.0.0",
+    "description": "BonDriverProxyEx-Service build by tsukumijima",
+    "homepage": "https://blog.tsukumijima.net/article/ts-dtv-soft/",
+    "checkver": "BonDriverProxyEx-([\\d.]+)\\.zip.*href",
+    "license": "MIT",
+    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/BondriverProxyEx-0.0.0.0.zip",
+    "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
+    "pre_install":  "if (!(Test-Path \"$persist_dir\\BonDriverProxyEx.ini\")) { $file = \"$dir\\BonDriverProxyEx.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
+    "persist": [
+        "BonDriverProxyEx.ini",
+    ],
+    "architecture": {
+        "64bit": {
+            "extract_dir": "BonDriverProxyEx-0.0.0.0\\BonDriverProxyEx_64bit"
+        },
+        "32bit": {
+            "extract_dir": "BonDriverProxyEx-0.0.0.0\\BonDriverProxyEx_32bit"
+        }
+    },
+    "autoupdate": {
+        "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/BonDriverProxyEx-$version.zip",
+        "architecture": {
+            "64bit": {
+                "extract_dir": "BonDriverProxyEx-$version\\BonDriverProxyEx_64bit"
+            },
+            "32bit": {
+                "extract_dir": "BonDriverProxyEx-$version\\BonDriverProxyEx_32bit"
+            }
+        }
+    }
+}

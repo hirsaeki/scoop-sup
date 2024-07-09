@@ -26,10 +26,15 @@
             "EpgTimer"
         ]
     ],
-    "pre_install": "if (Test-Path \"$persist_dir\\EpgDataCap_Bon.ini\") { $file = \"$dir\\EpgDataCap_Bon.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
+    "pre_install":  [
+        "if (!(Test-Path \"$persist_dir\\EpgDataCap_Bon.ini\")) { $file = \"$dir\\EpgDataCap_Bon.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
+        "if (!(Test-Path \"$persist_dir\\EpgTimerSrv.ini\")) { $file = \"$dir\\EpgTimerSrv.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
+        ""
+    ],
     "persist": [
         "EpgDataCap_Bon.ini",
-        "Bonctrl.ini"
+        "EpgTimerSrv.ini",
+        "Setting"
     ],
     "architecture": {
         "64bit": {
