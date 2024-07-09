@@ -1,0 +1,56 @@
+{
+    "version": "0.0.0-000000",
+    "description": "tstask build by tsukumijima",
+    "homepage": "https://blog.tsukumijima.net/article/ts-dtv-soft/",
+    "checkver": "TSTask-([\\d-]+-[\\d]+)\\.zip.*href",
+    "license": "MIT",
+    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/tstask-0.0.0-000000.zip",
+    "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
+    "bin": [
+        [
+            "TSTaskCentre.exe",
+            "tstaskcentre"
+        ],
+        [
+            "TSTask.exe",
+            "tstask"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "TSTaskCentre.exe",
+            "TSTaskCentre"
+        ],
+        [
+            "TSTask.exe",
+            "TSTask"
+        ]
+    ],
+    "pre_install":  [
+        "if (!(Test-Path \"$persist_dir\\TSTask.ini\")) { $file = \"$dir\\TSTask.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
+        "if (!(Test-Path \"$persist_dir\\TSTaskCentre.ini\")) { $file = \"$dir\\TSTaskCentre.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }"
+    ],
+    "persist": [
+        "gDataCap_Bon.ini",
+        "Bonctrl.ini"
+    ],
+    "architecture": {
+        "64bit": {
+            "extract_dir": "TSTask-0.0.0-000000\\TSTask_64bit"
+        },
+        "32bit": {
+            "extract_dir": "TSTask-0.0.0-000000\\TSTask_32bit"
+        }
+    },
+    "autoupdate": {
+        "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TSTask-$version.zip",
+        "architecture": {
+            "64bit": {
+                "extract_dir": "TSTask-$version\\TSTask_64bit"
+            },
+            "32bit": {
+                "extract_dir": "TSTask-$version\\TSTask_32bit"
+            }
+        }
+    }
+}
