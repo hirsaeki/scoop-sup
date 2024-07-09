@@ -6,34 +6,6 @@
     "license": "MIT",
     "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TSTask-0.2.0-210528.zip",
     "hash": "545a0f8e4f742013a2ed2a150237d449eabfaeb2f7cc0180730298bf3bdd26b0",
-    "bin": [
-        [
-            "TSTaskCentre.exe",
-            "tstaskcentre"
-        ],
-        [
-            "TSTask.exe",
-            "tstask"
-        ]
-    ],
-    "shortcuts": [
-        [
-            "TSTaskCentre.exe",
-            "TSTaskCentre"
-        ],
-        [
-            "TSTask.exe",
-            "TSTask"
-        ]
-    ],
-    "pre_install": [
-        "if (!(Test-Path \"$persist_dir\\TSTask.ini\")) { $file = \"$dir\\TSTask.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
-        "if (!(Test-Path \"$persist_dir\\TSTaskCentre.ini\")) { $file = \"$dir\\TSTaskCentre.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }"
-    ],
-    "persist": [
-        "TSTask.ini",
-        "TSTaskCentre.ini"
-    ],
     "architecture": {
         "64bit": {
             "extract_dir": "TSTask-0.2.0-210528\\TSTask_64bit"
