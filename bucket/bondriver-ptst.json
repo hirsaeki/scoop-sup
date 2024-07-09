@@ -1,11 +1,11 @@
 {
-    "version": "0.0",
+    "version": "1.0",
     "description": "BonDriver for PT1/2",
     "homepage": "https://github.com/tkmsst/BonDriver_PT-ST",
     "checkver": "github",
     "license": "Unknown",
-    "url": "https://github.com/tkmsst/BonDriver_PT-ST/releases/download/v0.0/BonDriver_PT-ST_0.0.zip",
-    "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
+    "url": "https://github.com/tkmsst/BonDriver_PT-ST/releases/download/v1.0/BonDriver_PT-ST_1.0.zip",
+    "hash": "1f88982c52620e1838bf53998c337bdc109ccc446d3723f7c1a22bcca93d5b52",
     "pre_install": "",
     "architecture": {
         "64bit": {
