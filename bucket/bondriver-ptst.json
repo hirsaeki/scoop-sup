@@ -11,15 +11,15 @@
         "64bit": {
             "pre_install": [
                 "Move-Item \"$dir\\x64\\*\" \"$dir\"",
-                "Remove-Item\"$dir\\x64\" -Recurse",
-                "Remove-Item\"$dir\\Win32\" -Recurse"
+                "Remove-Item \"$dir\\x64\" -Recurse",
+                "Remove-Item \"$dir\\Win32\" -Recurse"
             ]
         },
         "32bit": {
             "pre_install": [
                 "Move-Item \"$dir\\Win32\\*\" \"$dir\"",
-                "Remove-Item\"$dir\\x64\" -Recurse",
-                "Remove-Item\"$dir\\Win32\" -Recurse"
+                "Remove-Item \"$dir\\x64\" -Recurse",
+                "Remove-Item \"$dir\\Win32\" -Recurse"
             ]
         }
     },
