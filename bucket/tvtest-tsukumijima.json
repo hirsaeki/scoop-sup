@@ -1,7 +1,7 @@
 {
     "version": "0.10.0-240112",
     "description": "tvtest build by tsukumijima",
-    "homepage": "https://blog.tsukumijima.net/article/tvtest-usage/",
+    "homepage": "https://blog.tsukumijima.net/article/ts-dtv-soft/",
     "checkver": "TVTest-([\\d.]+-[\\d]+).zip",
     "license": "MIT",
     "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.10.0-240112.zip",
@@ -18,12 +18,15 @@
             "TVTest"
         ]
     ],
-    "pre_install": "$file = \"$dir\\TVTest.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file }",
+    "pre_install":  "if (Test-Path \"$persist_dir\\TVTest.ini\") { $file = \"$dir\\TVTest.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
     "persist": [
+        "Logo",
         "TVTest.ini",
         "TVTest.style.ini",
         "TVTest.search.ini",
-        "TVTest.tuner.ini"
+        "TVTest.tuner.ini",
+        "LogoData",
+        "LogoData.ini"
     ],
     "architecture": {
         "64bit": {

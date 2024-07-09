@@ -1,7 +1,7 @@
 {
     "version": "0.10.0-240112",
     "description": "tvtest build by tsukumijima",
-    "homepage": "https://blog.tsukumijima.net/article/tvtest-usage/",
+    "homepage": "https://blog.tsukumijima.net/article/ts-dtv-soft/",
     "checkver": "TVTest-([\\d.]+-[\\d]+).zip",
     "license": "MIT",
     "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.10.0-240112.zip",
