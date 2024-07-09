@@ -31,8 +31,8 @@
         "if (!(Test-Path \"$persist_dir\\TSTaskCentre.ini\")) { $file = \"$dir\\TSTaskCentre.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }"
     ],
     "persist": [
-        "gDataCap_Bon.ini",
-        "Bonctrl.ini"
+        "TSTask.ini",
+        "TSTaskCentre.ini"
     ],
     "architecture": {
         "64bit": {
