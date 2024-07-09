@@ -1,0 +1,29 @@
+{
+    "version": "0.0",
+    "description": "BonDriver for PT1/2",
+    "homepage": "https://github.com/tkmsst/BonDriver_PT-ST",
+    "checkver": "github",
+    "license": "Unknown",
+    "url": "https://github.com/tkmsst/BonDriver_PT-ST/releases/download/v0.0/BonDriver_PT-ST_0.0.zip",
+    "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
+    "pre_install": "",
+    "architecture": {
+        "64bit": {
+            "pre_install": [
+                "Move-Item \"$dir\\x64\\*\" \"$dir\"",
+                "Remove-Item\"$dir\\x64\" -Recurse",
+                "Remove-Item\"$dir\\Win32\" -Recurse"
+            ]
+        },
+        "32bit": {
+            "pre_install": [
+                "Move-Item \"$dir\\Win32\\*\" \"$dir\"",
+                "Remove-Item\"$dir\\x64\" -Recurse",
+                "Remove-Item\"$dir\\Win32\" -Recurse"
+            ]
+        }
+    },
+    "autoupdate": {
+        "url": "https://github.com/tkmsst/BonDriver_PT-ST/releases/download/v$version/BonDriver_PT-ST_$version.zip"
+    }
+}

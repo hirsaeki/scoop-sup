@@ -9,23 +9,24 @@
     "pre_install":  "if (!(Test-Path \"$persist_dir\\BonDriverProxyEx.ini\")) { $file = \"$dir\\BonDriverProxyEx.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
     "persist": [
         "BonDriverProxyEx.ini",
+        "BonDriver"
     ],
     "architecture": {
         "64bit": {
-            "extract_dir": "BonDriverProxyEx-0.0.0.0\\BonDriverProxyEx_64bit"
+            "extract_dir": "BonDriverProxyEx-0.0.0.0\\BonDriverProxyEx-Service_64bit"
         },
         "32bit": {
-            "extract_dir": "BonDriverProxyEx-0.0.0.0\\BonDriverProxyEx_32bit"
+            "extract_dir": "BonDriverProxyEx-0.0.0.0\\BonDriverProxyEx-Service_32bit"
         }
     },
     "autoupdate": {
         "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/BonDriverProxyEx-$version.zip",
         "architecture": {
             "64bit": {
-                "extract_dir": "BonDriverProxyEx-$version\\BonDriverProxyEx_64bit"
+                "extract_dir": "BonDriverProxyEx-$version\\BonDriverProxyEx-Service_64bit"
             },
             "32bit": {
-                "extract_dir": "BonDriverProxyEx-$version\\BonDriverProxyEx_32bit"
+                "extract_dir": "BonDriverProxyEx-$version\\BonDriverProxyEx-Service_32bit"
             }
         }
     }
