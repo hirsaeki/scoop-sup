@@ -18,7 +18,7 @@
             "TVTest"
         ]
     ],
-    "pre_install":  "if (Test-Path \"$persist_dir\\TVTest.ini\") { $file = \"$dir\\TVTest.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
+    "pre_install":  "if (!(Test-Path \"$persist_dir\\TVTest.ini\")) { $file = \"$dir\\TVTest.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
     "persist": [
         "Logo",
         "TVTest.ini",
