@@ -33,14 +33,14 @@
     ],
     "architecture": {
         "64bit": {
-            "extract_dir": "EDCB-000000\\EDBC_64bit"
+            "extract_dir": "EDCB-000000\\EDCB_64bit"
         },
         "32bit": {
             "extract_dir": "EDCB-000000\\EDCB_32bit"
         }
     },
     "autoupdate": {
-        "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/EDBC-$version.zip",
+        "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/EDCB-$version.zip",
         "architecture": {
             "64bit": {
                 "extract_dir": "EDCB-$version\\EDCB_64bit"

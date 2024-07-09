@@ -2,7 +2,7 @@
     "version": "0.0.0-000000",
     "description": "tstask build by tsukumijima",
     "homepage": "https://blog.tsukumijima.net/article/ts-dtv-soft/",
-    "checkver": "TSTask-([\\d-]+-[\\d]+)\\.zip.*href",
+    "checkver": "TSTask-([\\d.]+-[\\d]+)\\.zip.*href",
     "license": "MIT",
     "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/tstask-0.0.0-000000.zip",
     "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
