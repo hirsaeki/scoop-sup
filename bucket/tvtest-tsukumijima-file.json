@@ -19,12 +19,13 @@
             "/tvtplay"
         ]
     ],
-    "pre_install":  "if (!(Test-Path \"$persist_dir\\TVTest.ini\")) { $file = \"$dir\\TVTest.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
+    "pre_install": "@('TVTest.ini', 'tvtplay.ini')| %{if (!(Test-Path \"$persist_dir\\$_\")) { $file = \"$dir\\$_\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } } }",
     "persist": [
         "TVTest.ini",
         "TVTest.style.ini",
         "TVTest.search.ini",
-        "TVTest.tuner.ini"
+        "TVTest.tuner.ini",
+        "tvtplay.ini"
     ],
     "architecture": {
         "64bit": {
