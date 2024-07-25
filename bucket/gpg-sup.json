@@ -15,7 +15,8 @@
         "GnuPG/bin/gpgtar.exe",
         "GnuPG/bin/gpgv.exe",
         "GnuPG/bin/gpg-connect-agent.exe",
-        "bin/kleopatra.exe"
+        "bin/kleopatra.exe",
+        "bin/paperkey.exe"
     ],
     "persist": [
         ".gnupg"
@@ -39,6 +40,7 @@
     "uninstaller": {
         "script": [
             "& cmd @('/c','taskkill /F /T /IM kleopatra.exe 1>NUL 2>NUL')",
+            "& cmd @('/c','taskkill /F /T /IM paperkey.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM dbus-daemon.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM dirmngr.exe 1>NUL 2>NUL')",
             "if (Get-Process -Name \"gpg-agent\" -ErrorAction SilentlyContinue) { gpg-connect-agent killagent /bye 1>$null 2>$null }",
