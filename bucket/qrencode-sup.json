@@ -53,7 +53,7 @@
     "checkver": {
         "script": [
             "$base_url = 'https://packages.msys2.org/base/'",
-            "$version_regex = \"Version:.+\\s+<.+>([\\d.-]+)\"",
+            "$version_regex = \"Version:</dt>\\s*<dd[^>]*>([\\d.\\w-]+)\"",
             "",
             "$qrencode_page = (Invoke-WebRequest \"${base_url}mingw-w64-qrencode\" -UseBasicParsing).Content",
             "$libwinpthread_page = (Invoke-WebRequest \"${base_url}mingw-w64-winpthreads-git\" -UseBasicParsing).Content",
@@ -62,7 +62,7 @@
             "",
             "if(!($qrencode_page -match $version_regex)) { error \"No match found for version\"; continue }",
             "$qrencode_version = $matches[1]",
-            "if(!($libwinpthread_page -match \"(?:\\d+.){3}(?:\\w+.){2}-\\d+\")) { error \"No match found for version\"; continue }",
+            "if(!($libwinpthread_page -match $version_regex)) { error \"No match found for version\"; continue }",
             "$libwinpthread_version = $matches[0]",
             "if(!($libpng_page -match $version_regex)) { error \"No match found for version\"; continue }",
             "$libpng_version = $matches[1]",
