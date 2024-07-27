@@ -1,5 +1,5 @@
 {
-    "version": "4.1.1-2",
+    "version": "0.1.1-2",
     "description": "Encode input data in a QR Code symbol",
     "homepage": "https://fukuchi.org/works/qrencode/",
     "license": "LGPL-2.1-only",
@@ -69,10 +69,10 @@
             "if(!($zlib_page -match $version_regex)) { error \"No match found for version\"; continue }",
             "$zlib_version = $matches[1]",
             "",
-            "$composite_version = \"$qrencode_version|$libwinpthread_version|$libpng_version|$zlib_version\"",
+            "$composite_version = \"$qrencode_version;$libwinpthread_version;$libpng_version;$zlib_version\"",
             "Write-Output $composite_version"
         ],
-        "regex": "(?<version>(?<qrencode>[\\d.-]+)|(?<libwinpthread>[\\d.\\w-]+)|(?<libpng>[\\d.-]+)|(?<zlib>[\\d.-]+))"
+        "regex": "(?<version>(?<qrencode>[\\d.-]+);(?<libwinpthread>[\\d.\\w-]+);(?<libpng>[\\d.-]+);(?<zlib>[\\d.-]+))"
     },
     "autoupdate": {
         "architecture": {
