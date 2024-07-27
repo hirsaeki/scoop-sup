@@ -1,6 +1,6 @@
 {
     "homepage": "https://aoirii.babyblue.jp/font/riipopkk/index.html",
-    "checkver": " Version([\\d.]+)<br>",
+    "checkver": "Version([\\d.]+)<br>",
     "license": "OFL-1.1",
     "version": "3.62",
     "url": "https://aoirii.babyblue.jp/font/riipopkk/riipopkr.zip",
