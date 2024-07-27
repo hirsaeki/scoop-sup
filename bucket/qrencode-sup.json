@@ -69,10 +69,10 @@
             "if(!($zlib_page -match $version_regex)) { error \"No match found for version\"; continue }",
             "$zlib_version = $matches[1]",
             "",
-            "$composite_version = \"$qrencode_version_$libwinpthread_version_$libpng_version-$zlib_version\"",
+            "$composite_version = \"$qrencode_version|$libwinpthread_version|$libpng_version|$zlib_version\"",
             "Write-Output $composite_version"
         ],
-        "regex": "(?<version>(?<qrencode>[\\d.-]+)_(?<libwinpthread>[\\d.\\w-]+)_(?<libpng>[\\d.-]+)_(?<zlib>[\\d.-]+))"
+        "regex": "(?<version>(?<qrencode>[\\d.-]+)|(?<libwinpthread>[\\d.\\w-]+)|(?<libpng>[\\d.-]+)|(?<zlib>[\\d.-]+))"
     },
     "autoupdate": {
         "architecture": {
