@@ -72,7 +72,7 @@
             "$composite_version = \"$qrencode_version-$libwinpthread_version-$libpng_version-$zlib_version\"",
             "Write-Output $composite_version"
         ],
-        "regex": "(?<qrencode>[\\d.-]+)-(?<libwinpthread>[\\d.\\w-]+)-(?<libpng>[\\d.-]+)-(?<zlib>[\\d.-]+)"
+        "regex": "(?<version>(?<qrencode>[\\d.-]+)-(?<libwinpthread>[\\d.\\w-]+)-(?<libpng>[\\d.-]+)-(?<zlib>[\\d.-]+))"
     },
     "autoupdate": {
         "architecture": {
