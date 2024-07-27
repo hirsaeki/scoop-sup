@@ -63,7 +63,7 @@
             "if(!($qrencode_page -match $version_regex)) { error \"No match found for version\"; continue }",
             "$qrencode_version = $matches[1]",
             "if(!($libwinpthread_page -match $version_regex)) { error \"No match found for version\"; continue }",
-            "$libwinpthread_version = $matches[0]",
+            "$libwinpthread_version = $matches[1]",
             "if(!($libpng_page -match $version_regex)) { error \"No match found for version\"; continue }",
             "$libpng_version = $matches[1]",
             "if(!($zlib_page -match $version_regex)) { error \"No match found for version\"; continue }",
@@ -72,7 +72,7 @@
             "$composite_version = \"$qrencode_version-$libwinpthread_version-$libpng_version-$zlib_version\"",
             "Write-Output $composite_version"
         ],
-        "regex": "(?<qrencode>[\\d.-]+)-(?<libwinpthread>(?:\\d+.){3}(?:\\w+.){2}-\\d+)-(?<libpng>[\\d.-]+)-(?<zlib>[\\d.-]+)"
+        "regex": "(?<qrencode>[\\d.-]+)-(?<libwinpthread>[\\d.\\w-]+)-(?<libpng>[\\d.-]+)-(?<zlib>[\\d.-]+)"
     },
     "autoupdate": {
         "architecture": {
@@ -86,19 +86,19 @@
                 "hash": [
                     {
                         "url": "https://packages.msys2.org/package/mingw-w64-x86_64-qrencode",
-                        "regex": "SHA256:.+\\s+<.+>$sha256"
+                        "regex": "SHA256:.*\\s+.*<code>($sha256)</code>"
                     },
                     {
                         "url": "https://packages.msys2.org/package/mingw-w64-x86_64-libwinpthread-git",
-                        "regex": "SHA256:.+\\s+<.+>$sha256"
+                        "regex": "SHA256:.*\\s+.*<code>($sha256)</code>"
                     },
                     {
                         "url": "https://packages.msys2.org/package/mingw-w64-x86_64-libpng",
-                        "regex": "SHA256:.+\\s+<.+>$sha256"
+                        "regex": "SHA256:.*\\s+.*<code>($sha256)</code>"
                     },
                     {
                         "url": "https://packages.msys2.org/package/mingw-w64-x86_64-zlib",
-                        "regex": "SHA256:.+\\s+<.+>$sha256"
+                        "regex": "SHA256:.*\\s+.*<code>($sha256)</code>"
                     }
                 ]
             },
@@ -112,19 +112,19 @@
                 "hash": [
                     {
                         "url": "https://packages.msys2.org/package/mingw-w64-i686-qrencode",
-                        "regex": "SHA256:.+\\s+<.+>$sha256"
+                        "regex": "SHA256:.*\\s+.*<code>($sha256)</code>"
                     },
                     {
                         "url": "https://packages.msys2.org/package/mingw-w64-i686-libwinpthread-git",
-                        "regex": "SHA256:.+\\s+<.+>$sha256"
+                        "regex": "SHA256:.*\\s+.*<code>($sha256)</code>"
                     },
                     {
                         "url": "https://packages.msys2.org/package/mingw-w64-i686-libpng",
-                        "regex": "SHA256:.+\\s+<.+>$sha256"
+                        "regex": "SHA256:.*\\s+.*<code>($sha256)</code>"
                     },
                     {
                         "url": "https://packages.msys2.org/package/mingw-w64-i686-zlib",
-                        "regex": "SHA256:.+\\s+<.+>$sha256"
+                        "regex": "SHA256:.*\\s+.*<code>($sha256)</code>"
                     }
                 ]
             }
