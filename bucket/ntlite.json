@@ -28,7 +28,7 @@
     ],
     "checkver": {
         "url": "https://www.ntlite.com/download/",
-        "re": "v(([\\d]).([\\d]).([\\d]).([\\d]{4}))"
+        "re": "NTLite.+v([\\d.]+).+Changelog"
     },
     "autoupdate": {
         "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe"
