@@ -1,5 +1,5 @@
 {
-    "version": "4.1.1-2",
+    "version": "0.0.0.0-0",
     "description": "Encode input data in a QR Code symbol",
     "homepage": "https://fukuchi.org/works/qrencode/",
     "license": "LGPL-2.1-only",
@@ -61,7 +61,7 @@
             "$zlib_page = (Invoke-WebRequest \"${base_url}mingw-w64-zlib\" -UseBasicParsing).Content",
             "",
             "if(!($qrencode_page -match $version_regex)) { error \"No match found for version\"; continue }",
-            "$scriptver = $matches[1]",
+            "$qrencode_version = $matches[1]",
             "if(!($libwinpthread_page -match \"(?:\\d+.){3}(?:\\w+.){2}-\\d+\")) { error \"No match found for version\"; continue }",
             "$libwinpthread_version = $matches[0]",
             "if(!($libpng_page -match $version_regex)) { error \"No match found for version\"; continue }",
@@ -69,15 +69,16 @@
             "if(!($zlib_page -match $version_regex)) { error \"No match found for version\"; continue }",
             "$zlib_version = $matches[1]",
             "",
-            "Write-Output $scriptver $libwinpthread_version $libpng_version $zlib_version"
+            "$composite_version = \"$qrencode_version-$libwinpthread_version-$libpng_version-$zlib_version\"",
+            "Write-Output $composite_version"
         ],
-        "regex": "(?<version>[\\d.-]+)\\s(?<libwinpthreadversion>(?:\\d+.){3}(?:\\w+.){2}-\\d+)\\s(?<libpngversion>[\\d.-]+)\\s(?<zlibversion>[\\d.-]+)"
+        "regex": "(?<qrencode>[\\d.-]+)-(?<libwinpthread>(?:\\d+.){3}(?:\\w+.){2}-\\d+)-(?<libpng>[\\d.-]+)-(?<zlib>[\\d.-]+)"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": [
-                    "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-qrencode-$matchVersion-any.pkg.tar.zst",
+                    "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-qrencode-$matchQrencode-any.pkg.tar.zst",
                     "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libwinpthread-git-$matchLibwinpthreadversion-any.pkg.tar.zst",
                     "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libpng-$matchLibpngversion-any.pkg.tar.zst",
                     "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-zlib-$matchZlibversion-any.pkg.tar.zst"
@@ -103,7 +104,7 @@
             },
             "32bit": {
                 "url": [
-                    "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-qrencode-$matchVersion-any.pkg.tar.zst",
+                    "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-qrencode-$matchQrencode-any.pkg.tar.zst",
                     "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-git-$matchLibwinpthreadversion-any.pkg.tar.zst",
                     "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libpng-$matchLibpngversion-any.pkg.tar.zst",
                     "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-zlib-$matchZlibversion-any.pkg.tar.zst"
