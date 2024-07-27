@@ -1,5 +1,5 @@
 {
-    "version": "4.1.1-2;12.0.0.r81.g90abf784a-1;1.6.43-1;1.3.1-1",
+    "version": "0.1.1-2;12.0.0.r81.g90abf784a-1;1.6.43-1;1.3.1-1",
     "description": "Encode input data in a QR Code symbol",
     "homepage": "https://fukuchi.org/works/qrencode/",
     "license": "LGPL-2.1-only",
@@ -105,7 +105,7 @@
             "32bit": {
                 "url": [
                     "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-qrencode-$matchQrencode-any.pkg.tar.zst",
-                    "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-$matchLibwinpthread-any.pkg.tar.zst",
+                    "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-git-$matchLibwinpthread-any.pkg.tar.zst",
                     "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libpng-$matchLibpng-any.pkg.tar.zst",
                     "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-zlib-$matchZlib-any.pkg.tar.zst"
                 ],
