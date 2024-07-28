@@ -31,9 +31,9 @@
         ]
     ],
     "license": "GPLv2",
-    "url": "https://www.infradead.org/openconnect-gui/download/openconnect-gui-1.6.2-win64.exe",
+    "url": "https://www.infradead.org/openconnect-gui/download/openconnect-gui-1.6.2-win64.exe#/dl.7z",
     "hash": "de08d8968e40e219932d01025521f879178ec99246802db488c0fdac9fcef11a",
     "autoupdate": {
-        "url": "https://www.infradead.org/openconnect-gui/download/openconnect-gui-$version-win64.exe"
+        "url": "https://www.infradead.org/openconnect-gui/download/openconnect-gui-$version-win64.exe#/dl.7z"
     }
 }
