@@ -15,8 +15,15 @@
         "GnuPG/bin/gpgtar.exe",
         "GnuPG/bin/gpgv.exe",
         "GnuPG/bin/gpg-connect-agent.exe",
+        "GnuPG/bin/gpg-agent.exe",
         "bin/kleopatra.exe",
         "bin/paperkey.exe"
+    ],
+    "shortcuts": [
+        [
+            "bin/kleopatra.exe",
+            "kleopatra"
+        ]
     ],
     "persist": [
         ".gnupg"
@@ -37,8 +44,7 @@
         "}",
         "Get-Item \"$dir\\`$TEMP\\*-bin.exe\" |% { $n = $_.name ; $d = \"$dir\\`$TEMP\\$n\"; Write-Host -NoNewLine \"extracting `\"$n`\"...\"; 7z.exe x \"$d\" -o\"$dir\\GnuPG\" -y; Write-Host 'done' ; }"
     ],
-    "uninstaller": {
-        "script": [
+    "pre_uninstall": [
             "& cmd @('/c','taskkill /F /T /IM kleopatra.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM paperkey.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM dbus-daemon.exe 1>NUL 2>NUL')",
@@ -47,8 +53,7 @@
             "& cmd @('/c','taskkill /F /T /IM gpg-connect-agent.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM keyboxd.exe 1>NUL 2>NUL')",
             "& cmd @('/c','taskkill /F /T /IM scdaemon.exe 1>NUL 2>NUL')"
-        ]
-    },
+    ],
     "checkver": {
         "url": "https://www.gpg4win.org/download.html",
         "re": "Gpg4win ([0-9.]+)"
