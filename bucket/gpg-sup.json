@@ -59,7 +59,11 @@
         "re": "Gpg4win ([0-9.]+)"
     },
     "autoupdate": {
-        "url": "https://files.gpg4win.org/gpg4win-$version.exe#/dl.7z"
+        "url": "https://files.gpg4win.org/gpg4win-$version.exe#/dl.7z",
+        "hash": {
+            "url": "https://www.gpg4win.org/download.html",
+            "regex": "SHA256.*<code>($sha256)</code>"
+        }
     },
     "notes" : [
         "You should restart this shell session to enable \"GnuPG\" environment variable before use gpg command.",
