@@ -1,11 +1,11 @@
 {
-    "version": "240222",
+    "version": "240622",
     "description": "edcb build by tsukumijima",
     "homepage": "https://blog.tsukumijima.net/article/ts-dtv-soft/",
     "checkver": "EDCB-([\\d]+)\\.zip.*href",
     "license": "MIT",
-    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/EDCB-240222.zip",
-    "hash": "d01e081cca63c5cbfa1e9db238f00ab0e8c97ed978fd4949fa0523e96dcb0220",
+    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/EDCB-240622.zip",
+    "hash": "d8f7a20d83c692c338cd2ab6fed965a4b4d0bab18ca0e115f1549c8e18b98cc6",
     "bin": [
         [
             "EpgDataCap_Bon.exe",
@@ -26,7 +26,7 @@
             "EpgTimer"
         ]
     ],
-    "pre_install":  [
+    "pre_install": [
         "if (!(Test-Path \"$persist_dir\\EpgDataCap_Bon.ini\")) { $file = \"$dir\\EpgDataCap_Bon.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
         "if (!(Test-Path \"$persist_dir\\EpgTimerSrv.ini\")) { $file = \"$dir\\EpgTimerSrv.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
         ""
@@ -38,10 +38,10 @@
     ],
     "architecture": {
         "64bit": {
-            "extract_dir": "EDCB-240222\\EDCB_64bit"
+            "extract_dir": "EDCB-240622\\EDCB_64bit"
         },
         "32bit": {
-            "extract_dir": "EDCB-240222\\EDCB_32bit"
+            "extract_dir": "EDCB-240622\\EDCB_32bit"
         }
     },
     "autoupdate": {
