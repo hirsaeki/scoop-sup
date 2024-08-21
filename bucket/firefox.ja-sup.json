@@ -35,7 +35,17 @@
         "$shortcut.TargetPath = \"$original_dir\\firefox.exe\"",
         "$shortcut.Arguments = \"-P\"",
         "$shortcut.Save()",
-        "echo \"path = `\"$original_dir\\firefox.exe`\"\" | Set-Content \"$scoopdir\\shims\\firefox.shim\""
+        "echo \"path = `\"$original_dir\\firefox.exe`\"\" | Set-Content \"$scoopdir\\shims\\firefox.shim\"",
+        "$filePath = \"$dir/distribution/policies.json\"",
+        "if (!(Test-Path $filePath) -or (Get-Item $filePath).Length -eq 0) {",
+        "@'",
+        "{",
+        "  \"policies\": {",
+        "    \"DisableAppUpdate\": true",
+        "  }",
+        "}",
+        "'@ | Out-File -FilePath $filePath",
+        "}"
     ],
     "bin": "firefox.exe",
     "shortcuts": [
