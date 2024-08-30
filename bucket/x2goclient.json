@@ -9,8 +9,13 @@
     "shortcuts": [
         [
             "x2goclient.exe",
-            "X2Go client"
+            "X2Go client",
+            "--portable --home=$dir"
         ]
+    ],
+    "persist": [
+        ".x2go",
+        ".x2goclient"
     ],
     "checkver": {
         "url": "https://code.x2go.org/releases/binary-win32/x2goclient/releases/",

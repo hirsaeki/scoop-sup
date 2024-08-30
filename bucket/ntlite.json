@@ -1,7 +1,7 @@
 {
     "homepage": "https://www.ntlite.com/",
     "version": "2024.8.10045",
-    "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe",
+    "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe#/setup.exe",
     "hash": "62c8f17662374b054d504a321e9d79b509b4f1a9cd8ce5b0ff6b349bfada958f",
     "license": "Shareware",
     "shortcuts": [
@@ -10,15 +10,15 @@
             "NTLite"
         ]
     ],
-    "depends": "innoextract",
+    "depends": "innounp-unicode",
     "pre_install": "if(!(Test-Path \"$persist_dir\\settings.xml\")) {Set-Content -Encoding ASCII -Path \"$dir\\settings.xml\" -Value '<?xml version=\"1.0\" encoding=\"utf-8\"?>`r`n<GeneralOptions xmlns=\"urn:schemas-nliteos-com:pn.v1\">`r`n</GeneralOptions>'}",
     "installer": {
         "script": [
             "cd \"$dir\"",
-            "innoextract.exe \"$dir\\$fname\"",
-            "Get-ChildItem -Path app|Move-Item -Destination .",
-            "Remove-Item app -Recurse",
-            "Remove-Item \"$fname\""
+            "innounp.exe -x -d\"$dir\" \"$dir\\setup.exe\"",
+            "Get-ChildItem -Path \"`{app`}\"|Move-Item -Destination .",
+            "Remove-Item \"`{app`}\" -Recurse",
+            "Remove-Item \"setup.exe\""
         ]
     },
     "persist": [
@@ -31,6 +31,6 @@
         "re": "NTLite.+v([\\d.]+).+Changelog"
     },
     "autoupdate": {
-        "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe"
+        "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe#/setup.exe"
     }
 }

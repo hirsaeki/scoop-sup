@@ -25,9 +25,7 @@
             "kleopatra"
         ]
     ],
-    "persist": [
-        ".gnupg"
-    ],
+    "persist": ".gnupg",
     "pre_install": [
         "# GnuPGHOME",
         "# * use 'pre_install' (or 'post_install') instead of 'env_set' so that `scoop` doesn't remove the variable if/when uninstalled",
@@ -45,14 +43,14 @@
         "Get-Item \"$dir\\`$TEMP\\*-bin.exe\" |% { $n = $_.name ; $d = \"$dir\\`$TEMP\\$n\"; Write-Host -NoNewLine \"extracting `\"$n`\"...\"; 7z.exe x \"$d\" -o\"$dir\\GnuPG\" -y; Write-Host 'done' ; }"
     ],
     "pre_uninstall": [
-            "& cmd @('/c','taskkill /F /T /IM kleopatra.exe 1>NUL 2>NUL')",
-            "& cmd @('/c','taskkill /F /T /IM paperkey.exe 1>NUL 2>NUL')",
-            "& cmd @('/c','taskkill /F /T /IM dbus-daemon.exe 1>NUL 2>NUL')",
-            "& cmd @('/c','taskkill /F /T /IM dirmngr.exe 1>NUL 2>NUL')",
-            "if (Get-Process -Name \"gpg-agent\" -ErrorAction SilentlyContinue) { gpg-connect-agent killagent /bye 1>$null 2>$null }",
-            "& cmd @('/c','taskkill /F /T /IM gpg-connect-agent.exe 1>NUL 2>NUL')",
-            "& cmd @('/c','taskkill /F /T /IM keyboxd.exe 1>NUL 2>NUL')",
-            "& cmd @('/c','taskkill /F /T /IM scdaemon.exe 1>NUL 2>NUL')"
+        "& cmd @('/c','taskkill /F /T /IM kleopatra.exe 1>NUL 2>NUL')",
+        "& cmd @('/c','taskkill /F /T /IM paperkey.exe 1>NUL 2>NUL')",
+        "& cmd @('/c','taskkill /F /T /IM dbus-daemon.exe 1>NUL 2>NUL')",
+        "& cmd @('/c','taskkill /F /T /IM dirmngr.exe 1>NUL 2>NUL')",
+        "if (Get-Process -Name \"gpg-agent\" -ErrorAction SilentlyContinue) { gpg-connect-agent killagent /bye 1>$null 2>$null }",
+        "& cmd @('/c','taskkill /F /T /IM gpg-connect-agent.exe 1>NUL 2>NUL')",
+        "& cmd @('/c','taskkill /F /T /IM keyboxd.exe 1>NUL 2>NUL')",
+        "& cmd @('/c','taskkill /F /T /IM scdaemon.exe 1>NUL 2>NUL')"
     ],
     "checkver": {
         "url": "https://www.gpg4win.org/download.html",
@@ -65,7 +63,7 @@
             "regex": "SHA256.*<code>($sha256)</code>"
         }
     },
-    "notes" : [
+    "notes": [
         "You should restart this shell session to enable \"GnuPG\" environment variable before use gpg command.",
         "To avoid creating unwanted directories."
     ]

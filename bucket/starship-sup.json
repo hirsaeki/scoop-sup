@@ -1,0 +1,66 @@
+{
+    "version": "1.19.0",
+    "description": "The minimal, blazing fast, and extremely customizable prompt for any shell!",
+    "homepage": "https://starship.rs",
+    "license": "ISC",
+    "notes": [
+        "Usage: Add 'Invoke-Expression (&starship init powershell)' to the end of your PowerShell $PROFILE.",
+        "Prerequisites: A Powerline font installed and enabled in your terminal."
+    ],
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/starship/starship/releases/download/v1.19.0/starship-x86_64-pc-windows-msvc.zip",
+            "hash": "8e90c26522072d714d0fec882096990795ecbd6680bcd32b5f83cec42637aef0"
+        },
+        "32bit": {
+            "url": "https://github.com/starship/starship/releases/download/v1.19.0/starship-i686-pc-windows-msvc.zip",
+            "hash": "382a138bf4c068de422efa0135ab071dd4661fb5225219033b3546683765ee2a"
+        },
+        "arm64": {
+            "url": "https://github.com/starship/starship/releases/download/v1.19.0/starship-aarch64-pc-windows-msvc.zip",
+            "hash": "3e83284bd43bca53c499f75b927cc2896d74626f02591029457adb263d251ae0"
+        }
+    },
+    "bin": "starship.exe",
+    "persist": [
+        ".config"
+    ],
+    "pre_install": [
+        "if (Test-Path \"$env:USERPROFILE\\.config\\starship.toml\") {",
+        "    # %USERPROFILE%\\.config\\starship.tomlが存在する場合は何もしない",
+        "} elseif ($env:STARSHIP_CONFIG) {",
+        "    # STARSHIP_CONFIG環境変数が設定されている場合はそれを尊重",
+        "} else {",
+        "    # 新しい設定ファイルを作成し、環境変数を設定",
+        "    if (!(Test-Path \"$persist_dir\\starship.toml -ItemType Leaf)) {",
+        "        $config_path = \"$dir\\.config\\starship.toml\"",
+        "        New-Item -Path (Split-Path -Parent $config_path) -ItemType Directory -Force | Out-Null",
+        "        New-Item -Path $config_path -ItemType File -Force | Out-Null",
+        "    }",
+        "    [System.Environment]::SetEnvironmentVariable('STARSHIP_CONFIG', $config_path, [System.EnvironmentVariableTarget]::User)",
+        "    $env:STARSHIP_CONFIG = [System.Environment]::GetEnvironmentVariable('STARSHIP_CONFIG', [System.EnvironmentVariableTarget]::User)",
+        "}"
+    ],
+    "checkver": {
+        "github": "https://github.com/starship/starship"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/starship/starship/releases/download/v$version/starship-x86_64-pc-windows-msvc.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/starship/starship/releases/download/v$version/starship-i686-pc-windows-msvc.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/starship/starship/releases/download/v$version/starship-aarch64-pc-windows-msvc.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}

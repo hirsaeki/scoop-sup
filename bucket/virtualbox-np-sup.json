@@ -2,25 +2,11 @@
     "version": "7.0.20",
     "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.",
     "homepage": "https://www.virtualbox.org/",
-    "license": {
-        "identifier": "GPL-2.0-only|Freeware",
-        "url": "https://www.virtualbox.org/wiki/VirtualBox_PUEL"
-    },
-    "notes": [
-        "The VirtualBox Extension Pack is only free for personal, educational or evaluation use.",
-        "A license must be purchased for enterprise use.",
-        "For more information, go here: https://www.virtualbox.org/wiki/Licensing_FAQ"
-    ],
+    "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": [
-                "https://download.virtualbox.org/virtualbox/7.0.20/VirtualBox-7.0.20-163906-Win.exe#/setup.exe",
-                "https://download.virtualbox.org/virtualbox/7.0.20/Oracle_VM_VirtualBox_Extension_Pack-7.0.20.vbox-extpack"
-            ],
-            "hash": [
-                "fa3544162eee87b660999bd913f76ccb2e5a706928ef2c2e29811e4ac76fb166",
-                "d750fb17688d70e0cb2d7b06f1ad3a661303793f4d1ac39cfa9a54806b89da25"
-            ]
+            "url": "https://download.virtualbox.org/virtualbox/7.0.20/VirtualBox-7.0.20-163906-Win.exe#/setup.exe",
+            "hash": "fa3544162eee87b660999bd913f76ccb2e5a706928ef2c2e29811e4ac76fb166"
         }
     },
     "installer": {
@@ -61,12 +47,9 @@
             "",
             "Start-Process msiexec -ArgumentList @('/i', \"`\"$dir\\setup.msi`\"\", '/qn', '/norestart', \"INSTALLDIR=`\"$dir`\"\") -Wait -Verb RunAs | Out-Null",
             "Start-Process icacls -ArgumentList @(\"`\"$dir`\"\", '/grant', 'Everyone:F', '/T') -Wait -Verb RunAs | Out-Null",
-            "Remove-Item \"$env:PUBLIC\\Desktop\\Oracle VM VirtualBox.lnk\"",
-            "Remove-Item -Recurse \"$([Environment]::GetFolderPath('commonstartmenu'))\\Programs\\Oracle VM VirtualBox\"",
-            "$extPackResult = Invoke-ExternalCommand \"$dir\\VBoxManage.exe\" -ArgumentList @('extpack', 'install', '--replace', \"`\"$dir\\Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack`\"\")",
             "Remove-Item \"$dir\\setup.exe\", \"$dir\\setup.msi\"",
-            "Write-Host \"here is extPackResult\"",
-            "$extPackResult"
+            "Remove-Item \"$env:PUBLIC\\Desktop\\Oracle VM VirtualBox.lnk\"",
+            "Remove-Item -Recurse \"$([Environment]::GetFolderPath('commonstartmenu'))\\Programs\\Oracle VM VirtualBox\""
         ]
     },
     "uninstaller": {
@@ -108,10 +91,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": [
-                    "https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/setup.exe",
-                    "https://download.virtualbox.org/virtualbox/$version/Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack"
-                ]
+                "url": "https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-$matchRevision-Win.exe#/setup.exe"
             }
         },
         "hash": {
