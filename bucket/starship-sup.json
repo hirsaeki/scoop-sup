@@ -25,17 +25,21 @@
         }
     },
     "bin": "starship.exe",
-    "persist": ".config",
-    "pre_install": [
+    "persist": [
+        ".config"
+    ],
+    "post_install": [
         "if (Test-Path \"$env:USERPROFILE\\.config\\starship.toml\") {",
         "    # %USERPROFILE%\\.config\\starship.tomlが存在する場合は何もしない",
-        "} elseif ($env:STARSHIP_CONFIG) {",
-        "    # STARSHIP_CONFIG環境変数が設定されている場合はそれを尊重",
+        "    Write-Host \"There is starship.toml in the default path.\"",
+        "} elseif (Get-ItemProperty -Path 'HKCU:\\Environment' -Name 'STARSHIP_CONFIG' -ErrorAction SilentlyContinue) {",
+        "    # STARSHIP_CONFIG環境変数がHKCUに設定されている場合はそれを尊重",
+        "    Write-Host \"STARSHIP_CONFIG is already set in HKCU.\"",
         "} else {",
         "    # 新しい設定ファイルを作成し、環境変数を設定",
-        "    if (!(Test-Path \"$persist_dir\\starship.toml -ItemType Leaf)) {",
+        "    Write-Host \"Configuring starship.toml\"",
+        "    if (!(Test-Path \"$dir\\.config\\starship.toml\" -PathType Leaf)) {",
         "        $config_path = \"$dir\\.config\\starship.toml\"",
-        "        New-Item -Path (Split-Path -Parent $config_path) -ItemType Directory -Force | Out-Null",
         "        New-Item -Path $config_path -ItemType File -Force | Out-Null",
         "    }",
         "    [System.Environment]::SetEnvironmentVariable('STARSHIP_CONFIG', $config_path, [System.EnvironmentVariableTarget]::User)",
