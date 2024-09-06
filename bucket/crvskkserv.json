@@ -62,7 +62,7 @@
         "Remove-Item *.zip",
         "7z.exe -y e *.gz",
         "Remove-Item *.gz",
-        "ls -Name -Include \"SKK-JISYO.*\" -Exclude \"*.utf8\" | %{cmd.exe /c \"type $_ | nkf -w -Lu > $_.utf8\" && Remove-Item $_}",
+        "ls -Name -Include \"SKK-JISYO.*\" -Exclude \"*.utf8\" | %{cmd.exe /c \"type $_ | nkf -w -Lu > $_.utf8\"; if ($?) {Remove-Item $_} }",
         "ls -Name -Include \"SKK-JISYO.*.utf8\" | %{ (Get-Content $_ -Raw).Replace(\"う゛\", \"ゔ\") | Set-Content $_ }"
     ],
     "shortcuts": [
