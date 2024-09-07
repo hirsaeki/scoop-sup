@@ -6,12 +6,6 @@
     "license": "MIT",
     "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.10.0-240112.zip",
     "hash": "cc0df00316ab5fd80c302560327884197b4ec2b39c574725570777c04ae283de",
-    "bin": [
-        [
-            "TVTest.exe",
-            "tvtest-file"
-        ]
-    ],
     "shortcuts": [
         [
             "TVTest.exe",
@@ -19,13 +13,16 @@
             "/tvtplay"
         ]
     ],
-    "pre_install": "@('TVTest.ini', 'tvtplay.ini')| %{if (!(Test-Path \"$persist_dir\\$_\")) { $file = \"$dir\\$_\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } } }",
+    "pre_install": [
+        "(\"TVTest.ini\", \"TVTest.style.ini\", \"Plugins\\tvtplay.ini\", \"Plugins\\NicoJK.ini\") | %{",
+        "    if (!((Test-Path (Join-Path \"$persist_dir\" \"$_\") -PathType Leaf) -or (Test-Path (Join-Path \"$dir\" \"$_\") -PathType Leaf))) { New-Item -ItemType File -Path (Join-Path \"$dir\" \"$_\") }",
+        "}"
+    ],
     "persist": [
         "TVTest.ini",
         "TVTest.style.ini",
-        "TVTest.search.ini",
-        "TVTest.tuner.ini",
-        "tvtplay.ini"
+        "Plugins\\tvtplay.ini",
+        "Plugins\\NicoJK.ini"
     ],
     "architecture": {
         "64bit": {

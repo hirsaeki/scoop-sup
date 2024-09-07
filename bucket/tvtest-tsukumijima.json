@@ -18,15 +18,19 @@
             "TVTest"
         ]
     ],
-    "pre_install":  "if (!(Test-Path \"$persist_dir\\TVTest.ini\")) { $file = \"$dir\\TVTest.ini\"; if (Test-Path $file) { (Get-Item $file).LastWriteTime = Get-Date } else { New-Item -ItemType File -Path $file } }",
+    "pre_install": [
+        "(\"TVTest.ini\", \"TVTest.style.ini\", \"TVTest.search.ini\", \"TVTest.tuner.ini\", \"LogoData\", \"LogoData.ini\", \"Plugins\\NicoJK.ini\") | %{",
+        "    if (!((Test-Path (Join-Path \"$persist_dir\" \"$_\") -PathType Leaf) -or (Test-Path (Join-Path \"$dir\" \"$_\") -PathType Leaf))) { New-Item -ItemType File -Path (Join-Path \"$dir\" \"$_\") }",
+        "}"
+    ],
     "persist": [
-        "Logo",
         "TVTest.ini",
         "TVTest.style.ini",
         "TVTest.search.ini",
         "TVTest.tuner.ini",
         "LogoData",
-        "LogoData.ini"
+        "LogoData.ini",
+        "Plugins\\NicoJK.ini"
     ],
     "architecture": {
         "64bit": {
