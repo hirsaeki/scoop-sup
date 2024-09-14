@@ -1,5 +1,5 @@
 {
-    "version": "4.1.1-2_12.0.0.r264.g5c63f0a96-1_1.6.43-1_1.3.1-1",
+    "version": "4.1.1-2_12.0.0.r264.g5c63f0a96-1_1.6.44-1_1.3.1-1",
     "description": "Encode input data in a QR Code symbol",
     "homepage": "https://fukuchi.org/works/qrencode/",
     "license": "LGPL-2.1-only",
@@ -8,13 +8,13 @@
             "url": [
                 "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-qrencode-4.1.1-2-any.pkg.tar.zst",
                 "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libwinpthread-git-12.0.0.r264.g5c63f0a96-1-any.pkg.tar.zst",
-                "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libpng-1.6.43-1-any.pkg.tar.zst",
+                "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libpng-1.6.44-1-any.pkg.tar.zst",
                 "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-zlib-1.3.1-1-any.pkg.tar.zst"
             ],
             "hash": [
                 "d6e9664075934140c19a34c1bf53c67b69909e7feef97ba5cb7ddbe850312d81",
                 "787515d49836cf9f5e75078df0b0f31cc3cc38fd481d194afb41199ad0d1e337",
-                "ac161b1ed3ead3430fd2e776246b6fec4c192e37dca6aa43c3bf02df0bdb0f1d",
+                "9f731bce4478acc3e5f05ff6a43197f212f7909f55b65dd6feb92d17540725d5",
                 "ca04caafd73e15de216502d53038406e79d29b20c47d9a409e9b2d12858105f0"
             ]
         },
@@ -22,7 +22,7 @@
             "url": [
                 "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-qrencode-4.1.1-2-any.pkg.tar.zst",
                 "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-git-12.0.0.r264.g5c63f0a96-1-any.pkg.tar.zst",
-                "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libpng-1.6.43-1-any.pkg.tar.zst",
+                "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libpng-1.6.44-1-any.pkg.tar.zst",
                 "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-zlib-1.3.1-1-any.pkg.tar.zst"
             ],
             "hash": [
