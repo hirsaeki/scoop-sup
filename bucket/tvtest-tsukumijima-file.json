@@ -1,11 +1,11 @@
 {
-    "version": "0.10.0-240717",
+    "version": "0.10.0-241019",
     "description": "tvtest build by tsukumijima",
     "homepage": "https://blog.tsukumijima.net/article/ts-dtv-soft/",
     "checkver": "TVTest-([\\d.]+-[\\d]+)\\.zip.*href",
     "license": "MIT",
-    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.10.0-240717.zip",
-    "hash": "3f2bd4ad6826fed95a455a098a5f3cd984e9b090a7812b5ff8bc3c28f5275682",
+    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/TVTest-0.10.0-241019.zip",
+    "hash": "db2740bb4f792f38a7924b15c827d388e16530d455efc75751f9d14e94ec39d7",
     "shortcuts": [
         [
             "TVTest.exe",
@@ -26,10 +26,10 @@
     ],
     "architecture": {
         "64bit": {
-            "extract_dir": "TVTest-0.10.0-240717\\TVTest_64bit"
+            "extract_dir": "TVTest-0.10.0-241019\\TVTest_64bit"
         },
         "32bit": {
-            "extract_dir": "TVTest-0.10.0-240717\\TVTest_32bit"
+            "extract_dir": "TVTest-0.10.0-241019\\TVTest_32bit"
         }
     },
     "autoupdate": {
