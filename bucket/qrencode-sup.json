@@ -1,5 +1,5 @@
 {
-    "version": "4.1.1-2_12.0.0.r509.g079e6092b-1_1.6.47-1_1.3.1-1",
+    "version": "4.1.1-2_12.0.0.r535.g343bce7b0-1_1.6.47-1_1.3.1-1",
     "description": "Encode input data in a QR Code symbol",
     "homepage": "https://fukuchi.org/works/qrencode/",
     "license": "LGPL-2.1-only",
@@ -7,13 +7,13 @@
         "64bit": {
             "url": [
                 "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-qrencode-4.1.1-2-any.pkg.tar.zst",
-                "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libwinpthread-git-12.0.0.r509.g079e6092b-1-any.pkg.tar.zst",
+                "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libwinpthread-git-12.0.0.r535.g343bce7b0-1-any.pkg.tar.zst",
                 "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-libpng-1.6.47-1-any.pkg.tar.zst",
                 "https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-zlib-1.3.1-1-any.pkg.tar.zst"
             ],
             "hash": [
                 "d6e9664075934140c19a34c1bf53c67b69909e7feef97ba5cb7ddbe850312d81",
-                "2ad2c4e8bae376ed080daed8509bdc1311880eeb21c71408ed4dce0b674436d6",
+                "6a41a00b2cc6e33c2e4d2c002833a9fcd7d7bfd7ca86986b991f9708280be416",
                 "d9818aa4f4b6cbfb2a7d7f575b92595f28542e34475b63151071503c8c6ba3e2",
                 "ca04caafd73e15de216502d53038406e79d29b20c47d9a409e9b2d12858105f0"
             ]
@@ -21,13 +21,13 @@
         "32bit": {
             "url": [
                 "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-qrencode-4.1.1-2-any.pkg.tar.zst",
-                "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-git-12.0.0.r509.g079e6092b-1-any.pkg.tar.zst",
+                "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-git-12.0.0.r535.g343bce7b0-1-any.pkg.tar.zst",
                 "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libpng-1.6.47-1-any.pkg.tar.zst",
                 "https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-zlib-1.3.1-1-any.pkg.tar.zst"
             ],
             "hash": [
                 "fdec31c2c494ec025daff32c60db7a10f31ffbfb6348249fbb3c52059dab0786",
-                "5acc89e35fe28755bfce8a34771a6ef4d5bf644a564a96e05bfc60b37055135c",
+                "115868db524e4eaa4bc873a6d2b038d6bc303bd5534422929dfb33b8f281235a",
                 "0dec6df234875b11e4f2a97f7e17cc052f865216bff66f9831157423f7c1c940",
                 "e1a5c74f5056e147fa0f48ce5f7b99bbf1dc67a4c7b60d0ffbb3ab1594a74e7b"
             ]
