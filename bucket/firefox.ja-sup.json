@@ -1,6 +1,6 @@
 {
     "homepage": "https://www.mozilla.org/ja/firefox/new/",
-    "version": "135.0.1",
+    "version": "136.0",
     "license": "MPL-2.0",
     "notes": [
         "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
@@ -10,12 +10,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://download.mozilla.org/?product=firefox-135.0.1-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
-            "hash": "c000394418388578b01a845d869802090016623abfad32303b7498ea50040f55"
+            "url": "https://download.mozilla.org/?product=firefox-136.0-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
+            "hash": "a9ecd856c204236387e255afd9f7bbcf0c5973f0365d7467c67b5f3ff1977434"
         },
         "32bit": {
-            "url": "https://download.mozilla.org/?product=firefox-135.0.1-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
-            "hash": "9add28883beffb6036bed0a96df2db54c00fcfac048a4f318c85bd4b728fb205"
+            "url": "https://download.mozilla.org/?product=firefox-136.0-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
+            "hash": "1e4db02fac1e95ab001b75628e70754a707b11677eb7d8c1ce50612fc086d2ed"
         }
     },
     "extract_dir": "core",
