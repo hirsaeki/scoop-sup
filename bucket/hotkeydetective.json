@@ -1,0 +1,31 @@
+{
+    "version": "1.1.0",
+    "description": "Windows 8以降でグローバルホットキーを保持しているアプリケーションを調査するためのユーティリティ",
+    "homepage": "https://github.com/ITachiLab/hotkey-detective",
+    "license": "Unknown",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ITachiLab/hotkey-detective/releases/download/1.1.0/hotkey-detective-1.1.0.zip",
+            "hash": "a1c0027d32c2346fd4cb98d63dc9f2b5e861f75653809983fea8afbd16d7aa35",
+            "bin": [["x64/HotkeyDetective.exe", "hotkey-detective"]]
+        },
+        "32bit": {
+            "url": "https://github.com/ITachiLab/hotkey-detective/releases/download/1.1.0/hotkey-detective-1.1.0.zip",
+            "hash": "a1c0027d32c2346fd4cb98d63dc9f2b5e861f75653809983fea8afbd16d7aa35",
+            "bin": [["x86/HotkeyDetective.exe", "hotkey-detective"]]
+        }
+    },
+    "notes": "Hotkey Detective は管理者権限で実行する必要があります。使用後、プロセスにインストールされたDLLを完全に削除するには、システムの再起動が必要な場合があります。",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ITachiLab/hotkey-detective/releases/download/$version/hotkey-detective-$version.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/ITachiLab/hotkey-detective/releases/download/$version/hotkey-detective-$version.zip"
+            }
+        }
+    }
+}
+
