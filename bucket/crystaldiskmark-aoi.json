@@ -3,7 +3,7 @@
     "description": "CrystalDiskMark Aoi Edition - A simple disk benchmark software with Aoi character design",
     "homepage": "https://crystalmark.info/en/software/crystaldiskmark/",
     "license": "BSD-3-Clause",
-    "url": "https://sourceforge.net/projects/crystaldiskmark/files/8.0.6/CrystalDiskMark8_0_6.zip",
+    "url": "https://sourceforge.net/projects/crystaldiskmark/files/8.0.6/CrystalDiskMark8_0_6Aoi.zip",
     "hash": "sha1:c92dde72f16bd75cc92a7840d91b890ff6129450",
     "pre_install": [
         "'64', '32' | ForEach-Object {",
