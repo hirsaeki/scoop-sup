@@ -49,6 +49,10 @@
         "regex": "([\\d.a-zA-Z]+)/CrystalDiskMark.*Aoi.zip"
     },
     "autoupdate": {
-        "url": "https://sourceforge.net/projects/crystaldiskmark/files/$version/CrystalDiskMark$underscoreVersionAoi.zip"
+        "url": "https://sourceforge.net/projects/crystaldiskmark/files/$version/CrystalDiskMark$underscoreVersionAoi.zip",
+        "hash": {
+            "url": "https://sourceforge.net/projects/crystaldiskmark/files/$version/",
+            "find": "CrystalDiskMark$underscoreVersionAoi\\.zip\".*?\"sha1\":\"$sha1\""
+        }
     }
 }
