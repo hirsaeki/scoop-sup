@@ -4,7 +4,7 @@
     "homepage": "https://github.com/rigaya/Amatsukaze",
     "checkver": "github",
     "license": "MIT",
-    "url": "https://github.com/rigaya/Amatsukaze/releases/download/0.9.8.7/Amatsukaze_0.9.8.7.zip",
+    "url": "https://github.com/rigaya/Amatsukaze/releases/download/0.9.8.7/Amatsukaze_0.9.8.7.7z",
     "hash": "75f5d989a6a7aa2e3167479bba79ebecb5508a5e3e69a053e3a568a2d0bbef18",
     "pre_install": [
         "if (Test-Path \"$dir\\Amatsukaze\") {",
@@ -28,6 +28,6 @@
         "data"
     ],
     "autoupdate": {
-        "url": "https://github.com/rigaya/Amatsukaze/releases/download/$version/Amatsukaze_$version.zip"
+        "url": "https://github.com/rigaya/Amatsukaze/releases/download/$version/Amatsukaze_$version.7z"
     }
 }

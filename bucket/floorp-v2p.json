@@ -1,5 +1,5 @@
 {
-    "version": "11.26.1",
+    "version": "v11.26.1",
     "description": "A Browser build for keeping the Open, Private and Sustainable Web alive. Based on Mozilla Firefox.",
     "homepage": "https://github.com/Floorp-Projects",
     "license": "MPL-2.0",
@@ -25,7 +25,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/Floorp-Projects/Floorp-Portable-v2/releases/download/$version/floorp-win64.portable.7z"
+                "url": "https://github.com/Floorp-Projects/Floorp-Portable-v2/releases/download/v$version/floorp-win64.portable.7z"
             }
         }
     }
