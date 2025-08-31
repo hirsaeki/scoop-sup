@@ -1,5 +1,5 @@
 {
-    "version": "36.0.0",
+    "version": "35.0.2",
     "homepage": "https://developer.android.com/studio/releases/platform-tools.html",
     "description": "Android SDK platform-tools includes tools that interface with the Android platform, such as adb, fastboot, and systrace",
     "license": {
