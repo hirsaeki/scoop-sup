@@ -1,24 +1,27 @@
 {
-    "version": "v11.26.1",
+    "version": "11.29.0",
     "description": "A Browser build for keeping the Open, Private and Sustainable Web alive. Based on Mozilla Firefox.",
     "homepage": "https://github.com/Floorp-Projects",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Floorp-Projects/Floorp-Portable-v2/releases/download/v11.26.1/floorp-win64.portable.7z",
-            "hash": "986d02a462e17c18e8374cf938e15cec989c79bf23558d102bac040683e6b478"
+            "url": "https://github.com/Floorp-Projects/Floorp-Portable-v2/releases/download/v11.29.0/floorp-win64.portable.7z",
+            "hash": "b396ca3717e8c08771780457fd69fd2cc9b496b330a61aa19cd450d1ba84e988"
         }
     },
-    "bin": [["floorp-portable.exe", "floorp"]],
+    "bin": [
+        [
+            "floorp-portable.exe",
+            "floorp"
+        ]
+    ],
     "shortcuts": [
         [
             "floorp-portable.exe",
             "Floorp"
         ]
     ],
-    "persist": [
-        "data"
-    ],
+    "persist": "data",
     "checkver": {
         "github": "https://github.com/Floorp-Projects/Floorp-Portable-v2"
     },
