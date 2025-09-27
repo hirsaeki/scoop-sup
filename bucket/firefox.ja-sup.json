@@ -1,88 +1,128 @@
 {
-    "homepage": "https://www.mozilla.org/ja/firefox/new/",
-    "version": "143.0.1",
-    "license": "MPL-2.0",
-    "notes": [
-        "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
-        "  - Run 'Firefox Profile Manager', choose 'Scoop' then click 'Start Firefox'.",
-        "  - Visit 'about:profiles' page in Firefox to check *DEFAULT* profile.",
-        "For details: https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles"
-    ],
-    "architecture": {
-        "64bit": {
-            "url": "https://download.mozilla.org/?product=firefox-143.0.1-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
-            "hash": "d89cd22ce01d3ef3e2902da9ea51964ac43c4fc3077c9976ef8cb3edf9af7f89"
-        },
-        "32bit": {
-            "url": "https://download.mozilla.org/?product=firefox-143.0.1-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
-            "hash": "98e91b4acf5e8882335ff81dae6ea73cd064d530a525abd7e6be9f73b593a60a"
-        }
+  "homepage": "https://www.mozilla.org/ja/firefox/new/",
+  "version": "143.0.1",
+  "license": "MPL-2.0",
+  "notes": [
+    "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
+    "  - Run 'Firefox Profile Manager', choose 'Scoop' then click 'Start Firefox'.",
+    "  - Visit 'about:profiles' page in Firefox to check *DEFAULT* profile.",
+    "For details: https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles"
+  ],
+  "architecture": {
+    "64bit": {
+      "url": "https://download.mozilla.org/?product=firefox-143.0.1-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
+      "hash": "d89cd22ce01d3ef3e2902da9ea51964ac43c4fc3077c9976ef8cb3edf9af7f89"
     },
-    "extract_dir": "core",
-    "post_install": [
-        "firefox -CreateProfile \"Scoop $persist_dir\\profile\"",
-        "$Addition = \"$persist_dir\\addition\"",
-        "if (Test-Path $Addition) {",
-        "  info 'Copying additional items...'",
-        "  Copy-Item -Path $Addition\\* -Destination $dir -Force -Recurse -ErrorAction SilentlyContinue",
-        "}",
-        "echo \"update bin/shortcuts\"",
-        "$shell = New-Object -COM WScript.Shell",
-        "$shortcut = $shell.CreateShortCut(\"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Scoop Apps\\Firefox.lnk\")",
-        "$shortcut.TargetPath = \"$original_dir\\firefox.exe\"",
-        "$shortcut.Save()",
-        "$shortcut = $shell.CreateShortCut(\"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Scoop Apps\\Firefox Profile Manager.lnk\")",
-        "$shortcut.TargetPath = \"$original_dir\\firefox.exe\"",
-        "$shortcut.Arguments = \"-P\"",
-        "$shortcut.Save()",
-        "echo \"path = `\"$original_dir\\firefox.exe`\"\" | Set-Content \"$scoopdir\\shims\\firefox.shim\"",
-        "$filePath = \"$dir/distribution/policies.json\"",
-        "if (!(Test-Path $filePath) -or (Get-Item $filePath).Length -eq 0) {",
-        "@'",
-        "{",
-        "  \"policies\": {",
-        "    \"DisableAppUpdate\": true",
-        "  }",
-        "}",
-        "'@ | Out-File -FilePath $filePath",
-        "}"
-    ],
-    "bin": "firefox.exe",
-    "shortcuts": [
-        [
-            "firefox.exe",
-            "Firefox"
-        ],
-        [
-            "firefox.exe",
-            "Firefox Profile Manager",
-            "-P"
-        ]
-    ],
-    "persist": [
-        "distribution",
-        "profile"
-    ],
-    "checkver": {
-        "url": "https://www.mozilla.org/ja/firefox/notes/",
-        "re": "data-latest-firefox=\"([\\d.]+)\""
-    },
-    "autoupdate": {
-        "architecture": {
-            "64bit": {
-                "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
-                "hash": {
-                    "find": "([a-fA-F0-9]{64})\\s+(?:win64/ja/Firefox Setup ([\\d.]+).exe)",
-                    "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$version/SHA256SUMS"
-                }
-            },
-            "32bit": {
-                "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
-                "hash": {
-                    "find": "([a-fA-F0-9]{64})\\s+(?:win32/ja/Firefox Setup ([\\d.]+).exe)",
-                    "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$version/SHA256SUMS"
-                }
-            }
-        }
+    "32bit": {
+      "url": "https://download.mozilla.org/?product=firefox-143.0.1-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
+      "hash": "98e91b4acf5e8882335ff81dae6ea73cd064d530a525abd7e6be9f73b593a60a"
     }
+  },
+  "extract_dir": "core",
+  "post_install": [
+    "firefox -CreateProfile \"Scoop $persist_dir\\profile\"",
+    "$Addition = \"$persist_dir\\addition\"",
+    "if (Test-Path $Addition) {",
+    "  info 'Copying additional items...'",
+    "  Copy-Item -Path $Addition\\* -Destination $dir -Force -Recurse -ErrorAction SilentlyContinue",
+    "}",
+    "echo \"update bin/shortcuts\"",
+    "$shell = New-Object -COM WScript.Shell",
+    "$shortcut = $shell.CreateShortCut(\"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Scoop Apps\\Firefox.lnk\")",
+    "$shortcut.TargetPath = \"$original_dir\\firefox.exe\"",
+    "$shortcut.Save()",
+    "$shortcut = $shell.CreateShortCut(\"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Scoop Apps\\Firefox Profile Manager.lnk\")",
+    "$shortcut.TargetPath = \"$original_dir\\firefox.exe\"",
+    "$shortcut.Arguments = \"-P\"",
+    "$shortcut.Save()",
+    "echo \"path = `\"$original_dir\\firefox.exe`\"\" | Set-Content \"$scoopdir\\shims\\firefox.shim\"",
+    "$filePath = \"$dir/distribution/policies.json\"",
+    "if (!(Test-Path $filePath) -or (Get-Item $filePath).Length -eq 0) {",
+    "@'",
+    "{",
+    "  \"policies\": {",
+    "    \"DisableAppUpdate\": true",
+    "  }",
+    "}",
+    "'@ | Out-File -FilePath $filePath",
+    "}",
+    "echo \"update taskbar pin if exists\"",
+    "$taskbar = \"$env:APPDATA\\Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar\"",
+    "$pin = Get-ChildItem $taskbar -Filter '*Firefox*.lnk' -ErrorAction SilentlyContinue | Select-Object -First 1",
+    "$needRestart = $false",
+    "if ($pin) {",
+    "  $sc = $shell.CreateShortcut($pin.FullName)",
+    "  $oldTarget = $sc.TargetPath",
+    "  $oldIcon   = $sc.IconLocation",
+    "  $newTarget = \"$original_dir\\firefox.exe\"",
+    "  $newIcon   = \"$original_dir\\firefox.exe,0\"",
+    "  if (($oldTarget -ne $newTarget) -or ($oldIcon -ne $newIcon)) {",
+    "    $sc.TargetPath = $newTarget",
+    "    $sc.WorkingDirectory = \"$original_dir\"",
+    "    $sc.IconLocation = $newIcon",
+    "    $sc.Save()",
+    "    $needRestart = $true",
+    "    echo \"Taskbar pin updated: $($pin.Name)\"",
+    "  } else {",
+    "    echo \"Taskbar pin already up-to-date: $($pin.Name)\"",
+    "  }",
+    "",
+    "  # 軽量リフレッシュ: SHChangeNotify(SHCNE_ASSOCCHANGED)",
+    "  try {",
+    "    Add-Type @\"",
+    "using System;",
+    "using System.Runtime.InteropServices;",
+    "public static class ShellRefresher {",
+    "  [DllImport(\"shell32.dll\")] public static extern void SHChangeNotify(int wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);",
+    "}",
+    "\"@ -ErrorAction Stop",
+    "    [ShellRefresher]::SHChangeNotify(0x08000000, 0x0000, [IntPtr]::Zero, [IntPtr]::Zero)  # SHCNE_ASSOCCHANGED, SHCNF_IDLIST",
+    "  } catch {}",
+    "",
+    "  # 必要時のみ Explorer 再起動（最終手段）",
+    "  if ($needRestart) {",
+    "    echo \"Restarting Explorer to apply taskbar pin change...\"",
+    "    try { Stop-Process -Name explorer -Force -ErrorAction Stop } catch {}",
+    "    Start-Process explorer.exe",
+    "  }",
+    "}"
+  ],
+  "bin": "firefox.exe",
+  "shortcuts": [
+    [
+      "firefox.exe",
+      "Firefox"
+    ],
+    [
+      "firefox.exe",
+      "Firefox Profile Manager",
+      "-P"
+    ]
+  ],
+  "persist": [
+    "distribution",
+    "profile"
+  ],
+  "checkver": {
+    "url": "https://www.mozilla.org/ja/firefox/notes/",
+    "re": "data-latest-firefox=\"([\\d.]+)\""
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
+        "hash": {
+          "find": "([a-fA-F0-9]{64})\\s+(?:win64/ja/Firefox Setup ([\\d.]+).exe)",
+          "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$version/SHA256SUMS"
+        }
+      },
+      "32bit": {
+        "url": "https://download.mozilla.org/?product=firefox-$version-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
+        "hash": {
+          "find": "([a-fA-F0-9]{64})\\s+(?:win32/ja/Firefox Setup ([\\d.]+).exe)",
+          "url": "https://download-installer.cdn.mozilla.net/pub/firefox/releases/$version/SHA256SUMS"
+        }
+      }
+    }
+  }
 }
