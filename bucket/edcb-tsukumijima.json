@@ -1,11 +1,11 @@
 {
-    "version": "241220",
+    "version": "250920",
     "description": "edcb build by tsukumijima",
     "homepage": "https://blog.tsukumijima.net/article/ts-dtv-soft/",
     "checkver": "EDCB-([\\d]+)\\.zip.*href",
     "license": "MIT",
-    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/EDCB-241220.zip",
-    "hash": "bfe1db6fefdfe1afaef0773e0c7d0701d644766139b92b5c7ad1b33d75d530e3",
+    "url": "https://github.com/tsukumijima/DTV-Builds/raw/master/EDCB-250920.zip",
+    "hash": "ed20a2490aac68aba938bf817c5b171403b9d8a44e2a0e2ee9fee40143aae89c",
     "bin": [
         [
             "EpgDataCap_Bon.exe",
@@ -38,10 +38,10 @@
     ],
     "architecture": {
         "64bit": {
-            "extract_dir": "EDCB-241220\\EDCB_64bit"
+            "extract_dir": "EDCB-250920\\EDCB_64bit"
         },
         "32bit": {
-            "extract_dir": "EDCB-241220\\EDCB_32bit"
+            "extract_dir": "EDCB-250920\\EDCB_32bit"
         }
     },
     "autoupdate": {
