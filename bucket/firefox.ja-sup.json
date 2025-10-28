@@ -1,6 +1,6 @@
 {
     "homepage": "https://www.mozilla.org/ja/firefox/new/",
-    "version": "144.0",
+    "version": "144.0.2",
     "license": "MPL-2.0",
     "notes": [
         "To set profile 'Scoop' as *DEFAULT*, or profiles/settings was lost after update:",
@@ -10,12 +10,12 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://download.mozilla.org/?product=firefox-144.0-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
-            "hash": "cf8f174d26e1abe4ff8a70de88963a296ab0816cfe4515df26891b0643f2f605"
+            "url": "https://download.mozilla.org/?product=firefox-144.0.2-SSL&os=win64&lang=ja#/firefox-setup.exe#/dl.7z",
+            "hash": "013488fd0d61d26ed5dd7b5837ddc3cbfadb4b49301aaa175defe2b9ac3767e8"
         },
         "32bit": {
-            "url": "https://download.mozilla.org/?product=firefox-144.0-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
-            "hash": "e462b89efa8a6fa98a0d5e34d601a3cbb95d3e71227c5dd05ee594917eba742d"
+            "url": "https://download.mozilla.org/?product=firefox-144.0.2-SSL&os=win&lang=ja#/firefox-setup.exe#/dl.7z",
+            "hash": "fa2f5d41c2d8bfbae85f1916c5c5d305b1df3396dee6a7dc0f7b6eb1039d4c9c"
         }
     },
     "extract_dir": "core",
