@@ -1,0 +1,36 @@
+{
+  "version": "0.103.0",
+  "description": "All-in-one repack for latest Microsoft Visual C++ Redistributable Runtimes, without the original setup bloat payload.",
+  "homepage": "https://gitlab.com/stdout12/vcredist",
+  "license": {
+    "identifier": "Unlicense",
+    "url": "https://gitlab.com/stdout12/vcredist/-/blob/master/LICENSE"
+  },
+  "notes": "View command-line options and usage examples by executing: `vcredist-aio.exe /?`",
+  "architecture": {
+    "64bit": {
+      "url": "https://gitlab.com/-/project/76069787/uploads/4431f3448fa76633cfd4983142f81952/VisualCppRedist_AIO_x86_x64.exe#/vcredist-aio.exe",
+      "hash": "3c188e4651bcc07df2bdb06d69585158797b1bafb91557b09217621628cd5b23"
+    }
+  },
+  "installer": {
+    "script": [
+      "if (-not (is_admin)) { error 'This package requires admin rights to install'; break }",
+      "Start-Process -FilePath \"$dir\\$fname\" -ArgumentList @('/ai', '/gm2') -Verb RunAs -Wait"
+    ]
+  },
+  "bin": "vcredist-aio.exe",
+  "checkver": {
+    "url": "https://gitlab.com/stdout12/vcredist/-/releases/permalink/latest",
+    "regex": "(?s)releases/v(?<version>[\\d.]+).*?/-/project/76069787/uploads/(?<u64>[0-9a-f]{32})/VisualCppRedist_AIO_x86_x64\\.exe.*?VisualCppRedist_AIO_x86_x64\\.exe\\s*SHA-256:\\s*(?<sha64>[A-Fa-f0-9]{64})"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://gitlab.com/-/project/76069787/uploads/$matchU64/VisualCppRedist_AIO_x86_x64.exe#/vcredist-aio.exe",
+        "hash": "$matchSha64"
+      }
+    }
+  }
+}
+
