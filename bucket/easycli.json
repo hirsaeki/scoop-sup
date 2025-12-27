@@ -1,12 +1,12 @@
 {
-    "version": "0.1.30",
+    "version": "0.1.32",
     "description": "EasyCLI - A CLI tool",
     "homepage": "https://github.com/router-for-me/EasyCLI",
     "license": "Unknown",
     "architecture": {
         "64bit": {
             "url": "https://github.com/router-for-me/EasyCLI/releases/download/v0.1.32/EasyCLI-v0.1.32-windows-x64.zip",
-            "hash": "0A3D355898AB775180B3AE840FC88B01C7DA9CF751216F08DBA527FB55FD4"
+            "hash": "1c7da9cf751216f08dba527fb55fd47bdc55898ab775180b3ae840fc88b0a3d3"
         }
     },
     "bin": "EasyCLI-v0.1.32-windows-x64.exe",
