@@ -9,7 +9,14 @@
             "hash": "1c7da9cf751216f08dba527fb55fd47bdc55898ab775180b3ae840fc88b0a3d3"
         }
     },
-    "bin": "EasyCLI-v0.1.32-windows-x64.exe",
+    "post_install": "Get-ChildItem \"$dir\\EasyCLI*.exe\" | Rename-Item -NewName 'EasyCLI.exe'",
+    "bin": "EasyCLI.exe",
+    "shortcuts": [
+        [
+            "EasyCLI.exe",
+            "EasyCLI"
+        ]
+    ],
     "checkver": {
         "github": "https://github.com/router-for-me/EasyCLI"
     },
@@ -18,7 +25,6 @@
             "64bit": {
                 "url": "https://github.com/router-for-me/EasyCLI/releases/download/v$version/EasyCLI-v$version-windows-x64.zip"
             }
-        },
-        "bin": "EasyCLI-v$version-windows-x64.exe"
+        }
     }
 }
