@@ -9,7 +9,7 @@
             "hash": "1c7da9cf751216f08dba527fb55fd47bdc55898ab775180b3ae840fc88b0a3d3"
         }
     },
-    "post_install": "Get-ChildItem \"$dir\\EasyCLI*.exe\" | Rename-Item -NewName 'EasyCLI.exe'",
+    "pre_install": "Get-ChildItem \"$dir\\EasyCLI*.exe\" | Rename-Item -NewName 'EasyCLI.exe'",
     "bin": "EasyCLI.exe",
     "shortcuts": [
         [

@@ -1,0 +1,34 @@
+{
+    "version": "0.3.24",
+    "description": "A desktop application for integrating AI subscriptions with various coding tools.",
+    "homepage": "https://github.com/heyhuynhgiabuu/proxypal",
+    "license": "Unknown",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/heyhuynhgiabuu/proxypal/releases/download/v0.3.24/ProxyPal_0.3.24_x64-setup.exe#/dl.7z",
+            "hash": "e3e7df20f5a932bc74d9f076c6d5a2e9471760bd807a91d5aa37fcb57ccd2d41"
+        }
+    },
+    "extract_dir": "",
+    "bin": [
+        "proxypal.exe",
+        "cliproxyapi.exe"
+    ],
+    "shortcuts": [
+        [
+            "proxypal.exe",
+            "ProxyPal"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/heyhuynhgiabuu/proxypal/releases/download/v$version/ProxyPal_$version_x64-setup.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
