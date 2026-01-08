@@ -1,5 +1,5 @@
 {
-    "version": "36.0.0",
+    "version": "36.0.2",
     "homepage": "https://developer.android.com/studio/releases/platform-tools.html",
     "description": "Android SDK platform-tools includes tools that interface with the Android platform, such as adb, fastboot, and systrace",
     "license": {
@@ -7,7 +7,7 @@
         "url": "https://developer.android.com/studio/releases/platform-tools.html#downloads"
     },
     "url": "https://dl.google.com/android/repository/platform-tools-latest-windows.zip",
-    "hash": "cc9a43feda8d5758d94041bfd4623e5d1681be414df08988880731bafc46abeb",
+    "hash": "12c2841f354e92a0eb2fd7bf6f0f9bf8538abce7bd6b060ac8349d6f6a61107c",
     "bin": [
         "platform-tools\\adb.exe",
         "platform-tools\\etc1tool.exe",
