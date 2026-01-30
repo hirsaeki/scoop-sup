@@ -1,12 +1,12 @@
 {
-    "version": "0.3.91",
+    "version": "0.3.92",
     "description": "A desktop application for integrating AI subscriptions with various coding tools.",
     "homepage": "https://github.com/heyhuynhgiabuu/proxypal",
     "license": "Unknown",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/heyhuynhgiabuu/proxypal/releases/download/v0.3.91/ProxyPal_0.3.91_x64-setup.exe#/dl.7z",
-            "hash": "b2a75e10b4145ccdb5fabd2d758c58bbbfa9216397480b5cd746c248bb21989d"
+            "url": "https://github.com/heyhuynhgiabuu/proxypal/releases/download/v0.3.92/ProxyPal_0.3.92_x64-setup.exe#/dl.7z",
+            "hash": "838aebbece1e0377e322a6274d3ccddb4cfdf1949f227699f421a8321f250ce2"
         }
     },
     "extract_dir": "",
