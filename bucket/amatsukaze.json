@@ -13,9 +13,9 @@
         "}"
     ],
     "bin": [
-        "Amatsukaze.vbs",
-        "AmatsukazeClient.vbs",
-        "AmatsukazeServer.vbs"
+        "Amatsukaze.bat",
+        "AmatsukazeClient.bat",
+        "AmatsukazeServer.bat"
     ],
     "persist": [
         "config",
