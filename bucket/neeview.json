@@ -1,11 +1,11 @@
 {
-    "version": "45.0",
+    "version": "45.1",
     "description": "Image viewer",
     "homepage": "https://neelabo.github.io/NeeView/ja-jp/",
     "license": "MIT",
-    "url": "https://github.com/neelabo/NeeView/releases/download/45.0/NeeView45.0.zip",
-    "hash": "f591638e9a873a2159ec5f3ed82839aaf3e821196232134236f422983c6d1d01",
-    "extract_dir": "NeeView45.0",
+    "url": "https://github.com/neelabo/NeeView/releases/download/45.1/NeeView45.1.zip",
+    "hash": "bb3089eff17e8ffccc7eb82f9c70e799b4b65221e16b7316b7395acb667587b7",
+    "extract_dir": "NeeView45.1",
     "checkver": {
         "github": "https://github.com/neelabo/NeeView"
     },
