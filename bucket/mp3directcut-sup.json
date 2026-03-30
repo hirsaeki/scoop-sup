@@ -1,10 +1,10 @@
 {
-    "version": "2.39",
+    "version": "2.40",
     "description": "Lossless audio editor and recorder for MP3 files.",
     "homepage": "http://mpesch3.de",
     "license": "Freeware",
-    "url": "https://www.videohelp.com/download/mp3DC239.exe",
-    "hash": "6bc9cda080266f0dc5d6304712ff35f8227d37acac19bf49e3320836098c80b0",
+    "url": "https://www.videohelp.com/download/mp3DC240.exe",
+    "hash": "24428b9968b689bc7ba3f460d2aac10512f92a6e6d8bf87c7a8d37bb2b3608a4",
     "headers": {
         "Referer": "https://www.videohelp.com/software/mp3DirectCut"
     },
