@@ -1,5 +1,5 @@
 {
-    "version": "2.40",
+    "version": "2.39",
     "description": "Lossless audio editor and recorder for MP3 files.",
     "homepage": "http://mpesch3.de",
     "license": "Freeware",
@@ -32,7 +32,7 @@
         "regex": "Download mp3DirectCut ([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://www.videohelp.com/download/mp3DC$cleanVersion.exe",
+        "url": "https://www.videohelp.com/download/mp3DC_$cleanVersion.exe",
         "hash": {
             "url": "http://mpesch3.de",
             "regex": "SHA-256:\\s*([0-9a-f]{64})"
