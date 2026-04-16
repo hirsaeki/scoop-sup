@@ -46,7 +46,7 @@
         "curl.exe -sLO https://skk-dev.github.io/dict/SKK-JISYO.propernoun.gz",
         "curl.exe -sLO https://github.com/ymrl/SKK-JISYO.emoji-ja/raw/master/SKK-JISYO.emoji-ja.utf8",
         "curl.exe -sLO https://github.com/uasi/skk-emoji-jisyo/raw/master/SKK-JISYO.emoji.utf8",
-        "curl.exe -sLo SKK-JISYO.jawiki.utf8 https://github.com/tokuhirom/jawiki-kana-kanji-dict/raw/master/SKK-JISYO.jawiki",
+        "curl.exe -sLo SKK-JISYO.jawiki.utf8 https://github.com/tokuhirom/jawiki-kana-kanji-dict/releases/latest/download/SKK-JISYO.jawiki",
         "curl.exe -sLO https://gist.github.com/hirsaeki/376948d2cce4e3cba1b40758f686699d/raw/0cf1f0275967bb01bfe41ac18cf38aaebdb66672/SKK-JISYO.hatena.utf8",
         "curl.exe -sLO https://tkido.com/nicoime/nicoime.zip",
         "7z.exe -y e nicoime.zip",
