@@ -1,8 +1,8 @@
 {
     "homepage": "https://www.ntlite.com/",
-    "version": "9",
+    "version": "1",
     "url": "http://downloads.ntlite.com/files/NTLite_setup_x64.exe#/setup.exe",
-    "hash": "22d98fe3519a9a41838b96072d55ec9430772a01efe412b4ebe31ea08b762bd3",
+    "hash": "5a44727b426c5faca02db59ab67302026ffcf11fa2bf3605165d93da74e16810",
     "license": "Shareware",
     "shortcuts": [
         [
