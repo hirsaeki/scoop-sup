@@ -1,5 +1,5 @@
 {
-    "version": "9.9.0",
+    "version": "9.9.1",
     "description": "CrystalDiskInfo Aoi Edition - HDD/SSD utility for monitoring disk health with Aoi character design",
     "homepage": "https://crystalmark.info/",
     "license": "MIT",
@@ -23,8 +23,8 @@
             ]
         }
     },
-    "url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.0/CrystalDiskInfo9_9_0Aoi.zip",
-    "hash": "sha1:71c63ccd7b22683a4ef367cd5979b985f192ceec",
+    "url": "https://sourceforge.net/projects/crystaldiskinfo/files/9.9.1/CrystalDiskInfo9_9_1Aoi.zip",
+    "hash": "sha1:3567716d72facf3e2e200f097179c9a22460f7ac",
     "pre_install": [
         "if (!(Test-Path \"$persist_dir\\DiskInfo.ini\")) { New-Item \"$dir\\DiskInfo.ini\" | Out-Null }",
         "# Manually persist AMD RAID plugins (AMD_RC2t7x64.dll, AMD_RC2t7x86.dll)",
