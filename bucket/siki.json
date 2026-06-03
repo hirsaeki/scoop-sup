@@ -1,8 +1,8 @@
 {
     "homepage": "https://sikiapp.net/",
-    "version": "0.42.1",
-    "url": "https://sikiapp.net/archives/0.42.1/Siki-win32-x64-0.42.1.zip",
-    "hash": "27e96bc2fbb50e75a50cdd04afda1a124d2b7d794b2043a756ff78245f0c59ee",
+    "version": "0.42.2",
+    "url": "https://sikiapp.net/archives/0.42.2/Siki-win32-x64-0.42.2.zip",
+    "hash": "10c060d2fbbc6c7ab7d705e302048ba8cbca89f352e9f63d4cf10e5d1c84a06d",
     "license": "",
     "shortcuts": [
         [
