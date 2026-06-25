@@ -1,11 +1,11 @@
 {
-    "version": "1.0.8.0",
+    "version": "1.0.8.1",
     "description": "Automated MPEG2-TS Transcoder",
     "homepage": "https://github.com/rigaya/Amatsukaze",
     "checkver": "github",
     "license": "MIT",
-    "url": "https://github.com/rigaya/Amatsukaze/releases/download/1.0.8.0/Amatsukaze_1.0.8.0.7z",
-    "hash": "e608b4ed0b38e69de5058ebaa01bf44136632687a1b544ce679c8f1efafa573a",
+    "url": "https://github.com/rigaya/Amatsukaze/releases/download/1.0.8.1/Amatsukaze_1.0.8.1.7z",
+    "hash": "07b64455e0747057d60e19d464cf4e8478312e1844c14cbc526cf376c44fb9bf",
     "pre_install": [
         "if (Test-Path \"$dir\\Amatsukaze\") {",
         "    Move-Item \"$dir\\Amatsukaze\\*\" \"$dir\" -Force",
