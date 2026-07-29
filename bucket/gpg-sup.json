@@ -1,9 +1,9 @@
 {
     "homepage": "https://gnupg.org",
-    "version": "5.0.2",
+    "version": "5.1.0",
     "license": "GPLv3",
-    "url": "https://files.gpg4win.org/gpg4win-5.0.2.exe#/dl.7z",
-    "hash": "11864cdc6dedd58c5448ab1c0868886e56bdad96972bc06dcd44b80f9e527051",
+    "url": "https://files.gpg4win.org/gpg4win-5.1.0.exe#/dl.7z",
+    "hash": "9682f2825c70dc3e7efd8a3fcb9e676ccb9674bebbf6be1a30d5837f5b420a2e",
     "bin": [
         "GnuPG/bin/gpg.exe",
         [
