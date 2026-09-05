@@ -1,17 +1,17 @@
 {
-    "version": "0.19",
+    "version": "0.20",
     "description": "A program replacing video stream of ts",
     "homepage": "https://github.com/rigaya/tsreplace",
     "checkver": "github",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/rigaya/tsreplace/releases/download/0.19/tsreplace_0.19_Win32.7z",
-            "hash": "f4f25952f6c9201085597b801bb23286ff1b77284967583878f36541986aeca2"
+            "url": "https://github.com/rigaya/tsreplace/releases/download/0.20/tsreplace_0.20_Win32.7z",
+            "hash": "dbdc736eb77af23012ea5511870a4b2e570471fb63a1d58f3680b72bf6160571"
         },
         "32bit": {
-            "url": "https://github.com/rigaya/tsreplace/releases/download/0.19/tsreplace_0.19_x64.7z",
-            "hash": "66a747833487a7e54480ff7fc552b4d6badcbb068b0480fdf366f966ba3bb550"
+            "url": "https://github.com/rigaya/tsreplace/releases/download/0.20/tsreplace_0.20_x64.7z",
+            "hash": "60bb5e906a71b50b790bdf6d870fe3bc5c30e41c01c33dc583057d1c679acf20"
         }
     },
     "bin": "tsreplace.exe",
