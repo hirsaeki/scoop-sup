@@ -1,5 +1,5 @@
 {
-    "version": "1.9.34",
+    "version": "1.9.36",
     "description": "Powerful Bash-style command line editing for cmd.exe",
     "homepage": "https://chrisant996.github.io/clink/",
     "license": "GPL-3.0-only",
@@ -7,13 +7,14 @@
         "Run 'clink inject' to start clink on the current cmd",
         "Run 'clink autorun install' to auto start clink"
     ],
-    "url": "https://github.com/chrisant996/clink/releases/download/v1.9.34/clink.1.9.34.4e8ae4.zip",
-    "hash": "50f6ee0474e3bd02b48ce8c8f63ed933a14aee5127fc7072cb976ce10a43ce23",
+    "url": "https://github.com/chrisant996/clink/releases/download/v1.9.36/clink.1.9.36.af9152.zip",
+    "hash": "1eb57b2511cdc6b97b002f198fea8596f28c445eaafa4507c2215a53261357c9",
     "post_install": "(Get-Content -Path \"$dir\\clink.bat\") | ForEach-Object { $_ -replace 'start \"Clink\" ', '' } | Set-Content -Path \"$dir\\clink_terminal.bat\"",
     "bin": "clink.bat",
     "checkver": {
-        "github": "https://github.com/chrisant996/clink",
-        "regex": "/v(?<tag>[\\d.]+)/clink\\.([\\d.]+)\\.(?<commit>[\\w.]+)\\.zip"
+        "github": "https://api.github.com/repos/chrisant996/clink/releases/latest",
+        "jsonpath": "$.assets[*].browser_download_url",
+        "regex": "/v(?<tag>[\\d.]+)/clink\\.([\\d.]+)\\.(?<commit>[0-9a-f]+)\\.zip"
     },
     "persist": "profile",
     "autoupdate": {

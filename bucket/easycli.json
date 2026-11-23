@@ -1,29 +1,33 @@
 {
-    "version": "0.1.32",
-    "description": "EasyCLI - A CLI tool",
-    "homepage": "https://github.com/router-for-me/EasyCLI",
-    "license": "Unknown",
+    "version": "0.3.119",
+    "description": "Desktop GUI for CLIProxyAPI and AI agent configuration",
+    "homepage": "https://github.com/router-for-me/EasyCLIProxyAPI",
+    "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/router-for-me/EasyCLI/releases/download/v0.1.32/EasyCLI-v0.1.32-windows-x64.zip",
-            "hash": "1c7da9cf751216f08dba527fb55fd47bdc55898ab775180b3ae840fc88b0a3d3"
+            "url": "https://github.com/router-for-me/EasyCLIProxyAPI/releases/download/v0.3.119/EasyCLIProxyAPI-v0.3.119-Windows-amd64.zip",
+            "extract_dir": "EasyCLIProxyAPI-v0.3.119-Windows-amd64",
+            "hash": "13020aaf7602f63c8d7f546b4fbecdf4b8eb72517e1bf6563af3a8b9ef5fee00"
         }
     },
-    "pre_install": "Get-ChildItem \"$dir\\EasyCLI*.exe\" | Rename-Item -NewName 'EasyCLI.exe'",
-    "bin": "EasyCLI.exe",
-    "shortcuts": [
+    "bin": [
         [
-            "EasyCLI.exe",
+            "EasyCLIProxyAPI.exe",
             "EasyCLI"
         ]
     ],
-    "checkver": {
-        "github": "https://github.com/router-for-me/EasyCLI"
-    },
+    "shortcuts": [
+        [
+            "EasyCLIProxyAPI.exe",
+            "EasyCLI"
+        ]
+    ],
+    "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/router-for-me/EasyCLI/releases/download/v$version/EasyCLI-v$version-windows-x64.zip"
+                "url": "https://github.com/router-for-me/EasyCLIProxyAPI/releases/download/v$version/EasyCLIProxyAPI-v$version-Windows-amd64.zip",
+                "extract_dir": "EasyCLIProxyAPI-v$version-Windows-amd64"
             }
         }
     }
