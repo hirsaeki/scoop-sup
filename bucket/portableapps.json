@@ -20,14 +20,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://portableapps.com/download",
-        "regex": "Version ([\\d.]+)"
-    },
-    "autoupdate": {
-        "url": "https://downloads.sourceforge.net/project/portableapps/PortableApps.com%20Platform/PortableApps.com_Platform_Setup_$version.paf.exe#/dl.7z",
-        "hash": {
-            "url": "https://portableapps.com/download",
-            "regex": "SHA256 Hash</strong>: $sha256"
-        }
+        "url": "https://sourceforge.net/projects/portableapps/rss?path=/PortableApps.com%20Platform",
+        "regex": "PortableApps\\.com_Platform_Setup_([\\d.]+)\\.paf\\.exe(?=[<\\s?/\"'])"
     }
 }

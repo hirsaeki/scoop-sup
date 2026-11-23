@@ -1,15 +1,25 @@
 {
-    "homepage": "http://vb45wb5b.seesaa.net/",
+    "homepage": "https://vb45wb5b.seesaa.net/",
     "description": "niconico to Ass",
     "license": "Freeware",
-    "version": "1.49",
-    "url": "https://vb45wb5b.up.seesaa.net/image/NicoConvAss_1.49.zip",
-    "hash": "65e1a7ba25264da80fb96ccdca7b993257f7195119c75df44c29ebcb30ef8827",
-    "bin": "NicoconvAss.exe",
+    "version": "1.51t",
+    "url": "https://vb45wb5b.up.seesaa.net/image/NicoConvAss_1.51t.zip",
+    "hash": "1b3b3f055801aeab9f77a794c0909796529597a7b67fb0373ea1c061a9e41b0c",
+    "bin": "NicoConvAss.exe",
+    "pre_install": [
+        "$ini = Join-Path $dir \"NicoConvAss.ini\"",
+        "$persistedIni = Join-Path $persist_dir \"NicoConvAss.ini\"",
+        "if ((Test-Path -LiteralPath $persistedIni -PathType Container) -or (Test-Path -LiteralPath $ini -PathType Container)) {",
+        "    throw \"NicoConvAss.ini is a directory. Back it up and move it aside before continuing.\"",
+        "}",
+        "if (!(Test-Path -LiteralPath $persistedIni -PathType Leaf) -and !(Test-Path -LiteralPath $ini -PathType Leaf)) {",
+        "    Copy-Item -LiteralPath (Join-Path $dir \"NicoConvAss_default.ini\") -Destination $ini -ErrorAction Stop",
+        "}"
+    ],
     "persist": "NicoConvAss.ini",
     "checkver": {
-        "url": "http://vb45wb5b.seesaa.net",
-        "regex": "NicoConvAss_([\\d.]+)\\.zip"
+        "url": "https://vb45wb5b.seesaa.net/",
+        "regex": "NicoConvAss_([\\d.]+[a-z]*)\\.zip"
     },
     "autoupdate": {
         "url": "https://vb45wb5b.up.seesaa.net/image/NicoConvAss_$version.zip"
