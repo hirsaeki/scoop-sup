@@ -1,31 +1,47 @@
 {
-    "homepage": "https://subhra74.github.io/xdm/#downloads",
+    "version": "9.0.12",
     "description": "A powerful FOSS downloader supports protocols as HTTP,HTTPS,FTP,MPEG-DASH,HLS,HDS and features as seamlessly integration with browsers, monitoring and capture, broken/dead tasks resumption",
-    "version": "7.2.11",
+    "homepage": "https://subhra74.github.io/xdm/#downloads",
     "license": "Unknown",
-    "url": "https://github.com/subhra74/xdm/releases/download/7.2.11/xdmsetup.msi",
-    "hash": "0d22399b98f996d9c44ba072a3baf6f1669b6a4562139d7334188ee1b2541e63",
-    "extract_dir": "XDM",
-    "depends": "imagemagick",
-    "bin": "xdman.jar",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/subhra74/xdm/releases/download/9.0.12/xdm-9.0.12-x64.msi",
+            "hash": "6e536338bd3ace9880b5343d7a5b7c88f9bfeddf3e124bce13ea2e2c26cee284"
+        },
+        "arm64": {
+            "url": "https://github.com/subhra74/xdm/releases/download/9.0.12/xdm-9.0.12-arm64.msi",
+            "hash": "7b83cdb4a09e70eda0b084cd11f6d3ea5248f76d3c43823ae4fe89c9f4f55e5a"
+        }
+    },
     "pre_install": [
-        "cd $dir",
-        "echo 7z.exe x xdman.jar -ir!icon.png",
-        "7z.exe x xdman.jar \"-ir!icon.png\"",
-        "magick $dir\\icons\\hdpi\\icon.png $dir\\icons\\xhdpi\\icon.png $dir\\icons\\xxhdpi\\icon.png $dir\\xdm.ico"
+        "$launchers = @(Get-ChildItem -LiteralPath $dir -Recurse -Filter 'xdm-app.exe' -File)",
+        "if ($launchers.Count -ne 1) { throw 'Expected exactly one XDM launcher in the extracted MSI' }",
+        "if ($launchers[0].DirectoryName -ne $dir) { Get-ChildItem -LiteralPath $launchers[0].DirectoryName -Force | Move-Item -Destination $dir -ErrorAction Stop }"
+    ],
+    "bin": [
+        [
+            "xdm-app.exe",
+            "xdm"
+        ]
     ],
     "shortcuts": [
         [
-            "java-runtime\\bin\\javaw.exe",
-            "Xtreme Download Manager",
-            "-jar ..\\..\\xdman.jar",
-            "xdm.ico"
+            "xdm-app.exe",
+            "Xtreme Download Manager"
         ]
     ],
     "checkver": {
-        "github": "https://github.com/subhra74/xdm"
+        "github": "https://api.github.com/repos/subhra74/xdm/releases/latest",
+        "regex": "^(?<tag>v?([\\d.]+))$"
     },
     "autoupdate": {
-        "url": "https://github.com/subhra74/xdm/releases/download/$version/xdmsetup.msi"
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/subhra74/xdm/releases/download/$matchTag/xdm-$version-x64.msi"
+            },
+            "arm64": {
+                "url": "https://github.com/subhra74/xdm/releases/download/$matchTag/xdm-$version-arm64.msi"
+            }
+        }
     }
 }
