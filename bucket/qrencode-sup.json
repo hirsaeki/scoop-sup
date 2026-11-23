@@ -36,7 +36,12 @@
         }
     },
     "pre_install": [
-        "movedir \"$dir\\$(if ($arch -eq '64bit') {'mingw64'} else {'mingw32'})\" \"$dir\" | Out-Null",
+        "$mingwRoot = switch ($ProcessorArchitecture) {",
+        "    '64bit' { 'mingw64' }",
+        "    '32bit' { 'mingw32' }",
+        "    default { throw \"Unsupported QRencode architecture: $ProcessorArchitecture\" }",
+        "}",
+        "movedir (Join-Path $dir $mingwRoot) $dir | Out-Null",
         "$keep_files = @(\"$dir\\bin\\qrencode.exe\",",
         "                \"$dir\\bin\\libqrencode.dll\",",
         "                \"$dir\\bin\\libwinpthread-1.dll\",",
@@ -45,7 +50,7 @@
         "                \"$dir\\share\\licenses\\qrencode\\COPYING\",",
         "                \"$dir\\share\\man\\man1\\qrencode.1.gz\")",
         "",
-        "if ($arch -eq '32bit') {",
+        "if ($mingwRoot -eq 'mingw32') {",
         "    $keep_files += @(\"$dir\\bin\\libgcc_s_dw2-1.dll\",",
         "                     \"$dir\\share\\licenses\\libgcc\\COPYING.RUNTIME\",",
         "                     \"$dir\\share\\licenses\\libgcc\\COPYING3\")",
