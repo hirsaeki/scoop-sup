@@ -3,7 +3,7 @@
     "version": "1.26.29",
     "license": "Apache-2.0",
     "url": "https://sourceforge.net/projects/portableapps/files/VeraCrypt%20Portable/VeraCryptPortable_1.26.29.paf.exe#/dl.7z",
-    "hash": "sha1:5e3fcca3c6c9e807393f445a756c370ff1bd3f27",
+    "hash": "1e48bc0d5149c3ff09c5dd48380cabc22befd95c1ba15b16b6820d8e80dbf26f",
     "bin": [
         [
             "VeraCryptPortable.exe",
@@ -25,8 +25,8 @@
         "}"
     ],
     "checkver": {
-        "url": "https://portableapps.com/apps/security/veracrypt-portable",
-        "re": ">Version ([\\d.]+) for Windows"
+        "url": "https://sourceforge.net/projects/portableapps/rss?path=/VeraCrypt%20Portable",
+        "regex": "<title><!\\[CDATA\\[/VeraCrypt Portable/VeraCryptPortable_([\\d.]+)\\.paf\\.exe\\]\\]></title>"
     },
     "autoupdate": {
         "url": "https://sourceforge.net/projects/portableapps/files/VeraCrypt%20Portable/VeraCryptPortable_$version.paf.exe#/dl.7z"
