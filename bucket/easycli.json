@@ -1,13 +1,13 @@
 {
-    "version": "0.3.120",
+    "version": "0.3.121",
     "description": "Desktop GUI for CLIProxyAPI and AI agent configuration",
     "homepage": "https://github.com/router-for-me/EasyCLIProxyAPI",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/router-for-me/EasyCLIProxyAPI/releases/download/v0.3.120/EasyCLIProxyAPI-v0.3.120-Windows-amd64.zip",
-            "extract_dir": "EasyCLIProxyAPI-v0.3.120-Windows-amd64",
-            "hash": "484b237a78405297ef06b03bc294ca88df0d058b87d9513720fe8b9a38b2987a"
+            "url": "https://github.com/router-for-me/EasyCLIProxyAPI/releases/download/v0.3.121/EasyCLIProxyAPI-v0.3.121-Windows-amd64.zip",
+            "extract_dir": "EasyCLIProxyAPI-v0.3.121-Windows-amd64",
+            "hash": "932b37183f847bc59482f8acd65b27a183bfe419ccaaae5f910f8e7975854c44"
         }
     },
     "bin": [
